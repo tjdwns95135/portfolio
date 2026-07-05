@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>원료 구매·발주 자동화 — 최성준 포트폴리오</title>
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#0C0F16;color:#E8ECF3;
+    font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  .bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:14px 22px;background:rgba(12,15,22,.85);backdrop-filter:blur(10px);
+    border-bottom:1px solid #1E2735;}
+  .bar .back{color:#9FB4FF;text-decoration:none;font-size:14px;font-weight:600;}
+  .bar .back:hover{color:#C3D2FF;}
+  .bar .ttl{font-size:14px;font-weight:700;color:#C9D2DF;}
+  .wrap{max-width:1040px;margin:0 auto;padding:34px 22px 80px;}
+  .lead{margin:0 0 30px;padding:22px 24px;background:#141B26;border:1px solid #223046;border-radius:14px;}
+  .lead h1{margin:0 0 8px;font-size:26px;font-weight:800;letter-spacing:-.03em;}
+  .lead p{margin:0;color:#A9B4C4;font-size:15px;line-height:1.6;}
+  .slide{margin:16px 0;border-radius:12px;overflow:hidden;box-shadow:0 14px 40px -22px rgba(0,0,0,.8);
+    border:1px solid #1E2735;background:#fff;}
+  .slide img{display:block;width:100%;height:auto;}
+  .vwrap{margin:20px 0 26px;padding:20px;background:#0F1620;border:1px solid #223046;border-radius:14px;}
+  .vwrap .vh{font-size:14px;font-weight:700;color:#7FE0BB;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .vh .dot{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 10px #34D399;}
+  .vrow{display:grid;gap:16px;}
+  .vrow.two{grid-template-columns:1fr 1fr;}
+  .vrow figure{margin:0;}
+  .vrow figcaption{margin-top:8px;font-size:12.5px;color:#8895A8;text-align:center;}
+  video{width:100%;border-radius:10px;background:#000;display:block;border:1px solid #223046;}
+  @media (max-width:720px){.vrow.two{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+  <div class="bar">
+    <a class="back" href="../index.html">← 포트폴리오로</a>
+    <span class="ttl">원료 구매·발주 자동화 · SMART SCM</span>
+    <span></span>
+  </div>
+
+  <div class="wrap">
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(45,212,191,.28);border-radius:18px;padding:30px 32px 28px;box-shadow:0 20px 60px rgba(0,0,0,.45);margin-bottom:26px;">
+      <div style="font-size:13px;font-weight:600;letter-spacing:1.5px;color:#3FE0CC;text-transform:uppercase;">Project</div>
+      <h1 style="margin:8px 0 0;font-size:30px;font-weight:900;letter-spacing:-1px;color:#EEF4FA;line-height:1.2;">원료 구매·발주 자동화</h1>
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12.5px;font-weight:700;color:#94A6B4;background:rgba(148,166,180,.14);border:1px solid rgba(148,166,180,.25);border-radius:8px;padding:6px 8px;">배경</span>
+          <p style="margin:0;font-size:15.5px;line-height:1.65;color:#D3DBE3;">ERP에서 데이터를 바로 꺼낼 방법이 없어, 배합비·소요량·재고 비교 등 전 과정을 손으로 엑셀에 옮겨 계산했습니다.</p>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12.5px;font-weight:700;color:#3FE0CC;background:rgba(45,212,191,.16);border:1px solid rgba(45,212,191,.32);border-radius:8px;padding:6px 8px;">문제 해결</span>
+          <p style="margin:0;font-size:15.5px;line-height:1.65;color:#D3DBE3;">필요한 데이터를 자동으로 모아, 하나의 데이터베이스에서 소요량·부족분·단가를 함께 확인하는 웹앱으로 정리했습니다. 구매팀과 함께 진행했고 개발을 담당했습니다.</p>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12.5px;font-weight:700;color:#4ADE80;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.30);border-radius:8px;padding:6px 8px;">결과</span>
+          <p style="margin:0;font-size:15.5px;line-height:1.65;color:#E4ECF2;font-weight:600;">건당 3분 → 1분 15초 · 흩어진 자료 4곳 → 하나의 DB로 통합</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide"><img src="purchase_assets/slides/slide1.png" alt="슬라이드 1" loading="lazy"></div>
+    <div class="slide"><img src="purchase_assets/slides/slide2.png" alt="슬라이드 2" loading="lazy"></div>
+    <div class="slide"><img src="purchase_assets/slides/slide3.png" alt="슬라이드 3" loading="lazy"></div>
+    <div class="slide"><img src="purchase_assets/slides/slide4.png" alt="슬라이드 4" loading="lazy"></div>
+    <div class="slide"><img src="purchase_assets/slides/slide5.png" alt="슬라이드 5" loading="lazy"></div>
+    <div class="slide"><img src="purchase_assets/slides/slide6.png" alt="슬라이드 6" loading="lazy"></div>
+    <div class="slide"><img src="purchase_assets/slides/slide7.png" alt="슬라이드 7" loading="lazy"></div>
+
+    <div class="vwrap">
+      <div class="vh"><span class="dot"></span>기존 수기 엑셀 작업 ↔ 자동화 웹앱 비교</div>
+      <p style="margin:0 0 14px;color:#8895A8;font-size:13.5px;">동일 업무를 수기 엑셀과 자동화 웹앱으로 처리하는 과정 비교입니다. 민감 정보(단가·제품명·거래처)는 블러 처리했습니다.</p>
+      <div class="vrow">
+        <figure>
+          <video src="purchase_assets/media1_masked.mp4" controls muted preload="metadata" playsinline></video>
+        </figure>
+      </div>
+    </div>
+
+    <div class="slide"><img src="purchase_assets/slides/slide8.png" alt="슬라이드 8" loading="lazy"></div>
+    <div class="slide"><img src="purchase_assets/slides/slide9.png" alt="슬라이드 9" loading="lazy"></div>
+
+    <div class="vwrap">
+      <div class="vh"><span class="dot"></span>실제 동작 영상 · 발주 자동화 데모</div>
+      <div class="vrow">
+        <figure>
+          <video src="purchase_assets/media3_masked.mp4" controls muted preload="metadata" playsinline></video>
+        </figure>
+      </div>
+    </div>
+
+    <div class="slide"><img src="purchase_assets/slides/slide10.png" alt="슬라이드 10" loading="lazy"></div>
+    <div class="slide"><img src="purchase_assets/slides/slide11.png" alt="슬라이드 11" loading="lazy"></div>
+    <div class="slide"><img src="purchase_assets/slides/slide12.png" alt="슬라이드 12" loading="lazy"></div>
+    <div class="slide"><img src="purchase_assets/slides/slide13.png" alt="슬라이드 13" loading="lazy"></div>
+    <div class="slide"><img src="purchase_assets/slides/slide14.png" alt="슬라이드 14" loading="lazy"></div>
+    <div class="slide"><img src="purchase_assets/slides/slide15.png" alt="슬라이드 15" loading="lazy"></div>
+  </div>
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){
+    var v=en.target;
+    if(en.isIntersecting){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});}
+    else{v.pause();}
+  });},{threshold:0.4});
+  document.querySelectorAll('video').forEach(function(v){io.observe(v);});
+})();
+</script>
+</body>
+</html>
