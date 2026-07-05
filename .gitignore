@@ -1,0 +1,48 @@
+# ===== 민감: 원본 영상 (절대 공개 금지) =====
+projects/purchase_assets/media1.mp4
+projects/purchase_assets/media2.mp4
+projects/purchase_assets/media3.mp4
+projects/purchase_assets/media2_masked.mp4
+projects/purchase_assets/*.prev.mp4
+
+# ===== 민감: 원본 프레임/슬라이드 =====
+projects/purchase_assets/_frames/
+projects/purchase_assets/slides_original/
+
+# ===== 작업/검증용 산출물 =====
+projects/purchase_assets/_mask/
+projects/purchase_assets/_vchk/
+projects/purchase_assets/_vchk_*.png
+projects/purchase_assets/_audit/
+projects/purchase_assets/_audit2/
+projects/purchase_assets/_audit3/
+projects/purchase_assets/_final/
+projects/purchase_assets/_v2/
+projects/purchase_assets/_m1v/
+projects/purchase_assets/_mont*.png
+projects/purchase_assets/_masked_check*.png
+projects/purchase_assets/_montage*.png
+projects/purchase_assets/_s*_*.png
+projects/_pubchk/
+projects/**/filt_*.txt
+
+# ===== projects 루트의 검증/작업용 이미지 (원본 크롭 포함 가능) =====
+projects/_masked_check.png
+projects/_montage.png
+projects/_s9_check.png
+projects/_s9_grid.png
+projects/_s10_left.png
+projects/_s10_right.png
+projects/_*.png
+
+# ===== 참조 안 되는 원본/보조 파일 =====
+projects/purchase.pdf
+_tools_copy_photo.py
+
+# ===== 내부 문서 =====
+handoff.md
+
+# ===== 기타 =====
+.DS_Store
+Thumbs.db
+*.log

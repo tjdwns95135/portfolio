@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>최성준 — 포트폴리오</title>
+<style>
+  :root{
+    --bg:#F5F7FB; --surface:#FFFFFF; --surface-2:#EDF1F9;
+    --ink:#0F1826; --muted:#4E596F; --faint:#6E7A8E;
+    --border:#DBE2EF; --border-strong:#C7D1E2;
+    --accent:#2563EB; --accent-ink:#1B4FD1; --accent-soft:#E9F0FF;
+    --good:#0E9E6E; --good-soft:#E4F7EF; --good-line:#BFE9D7;
+    --old:#C2603F;
+    --shadow:0 1px 2px rgba(15,24,38,.05), 0 12px 30px -18px rgba(37,99,235,.22);
+    --sans:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0E131C; --surface:#161D28; --surface-2:#1C2432;
+      --ink:#EEF2F8; --muted:#A4B0C2; --faint:#6E7A8C;
+      --border:#27303D; --border-strong:#3A4655;
+      --accent:#6C93FF; --accent-ink:#B6CBFF; --accent-soft:#18233C;
+      --good:#34D399; --good-soft:#12271F; --good-line:#24523D;
+      --old:#E0876B;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 34px -20px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#F5F7FB;--surface:#FFFFFF;--surface-2:#EDF1F9;--ink:#0F1826;--muted:#4E596F;--faint:#6E7A8E;
+    --border:#DBE2EF;--border-strong:#C7D1E2;--accent:#2563EB;--accent-ink:#1B4FD1;--accent-soft:#E9F0FF;
+    --good:#0E9E6E;--good-soft:#E4F7EF;--good-line:#BFE9D7;--old:#C2603F;
+    --shadow:0 1px 2px rgba(15,24,38,.05), 0 12px 30px -18px rgba(37,99,235,.22);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E131C;--surface:#161D28;--surface-2:#1C2432;--ink:#EEF2F8;--muted:#A4B0C2;--faint:#6E7A8C;
+    --border:#27303D;--border-strong:#3A4655;--accent:#6C93FF;--accent-ink:#B6CBFF;--accent-soft:#18233C;
+    --good:#34D399;--good-soft:#12271F;--good-line:#24523D;--old:#E0876B;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 34px -20px rgba(0,0,0,.7);
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:-.011em;}
+  .page{max-width:1320px;margin:0 auto;padding:40px 40px 72px;}
+  .num{font-variant-numeric:tabular-nums;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);}
+
+  .toggle{position:fixed;top:20px;right:20px;z-index:20;font-size:13px;cursor:pointer;
+    padding:8px 15px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:var(--muted);}
+  .toggle:hover{color:var(--ink);border-color:var(--border-strong);}
+
+  /* ---------- HERO (single wide card) ---------- */
+  .hero{margin-bottom:16px;}
+  .hero-card{display:flex;gap:38px;align-items:center;padding:38px 44px;}
+  .photo{flex:0 0 197px;width:197px;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--surface-2);border:1px solid var(--border);}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;}
+  .hero-body{flex:1;min-width:0;}
+  .hero h1{font-size:56px;line-height:1;font-weight:800;margin:0 0 18px;letter-spacing:-.04em;}
+  .stmt{font-size:24px;font-weight:700;line-height:1.4;letter-spacing:-.03em;margin:0 0 22px;white-space:nowrap;}
+  .stmt .mk{color:var(--accent-ink);}
+  .tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:20px;}
+  .tag{font-size:13.5px;color:var(--accent-ink);background:var(--accent-soft);padding:6px 13px;border-radius:8px;}
+  .contact{display:flex;flex-wrap:wrap;gap:8px 30px;padding-top:18px;border-top:1px solid var(--border);}
+  .contact>span{display:inline-flex;align-items:baseline;gap:10px;font-size:15px;}
+  .contact .k{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--faint);}
+  .contact .v{color:var(--ink);font-weight:500;}
+
+  /* ---------- section head ---------- */
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin:36px 4px 18px;}
+  .sec-head h2{font-size:20px;font-weight:800;margin:0;letter-spacing:-.02em;}
+  .sec-head .hint{font-size:13.5px;color:var(--faint);}
+  .sec-head .rule{flex:1;height:1px;background:var(--border);}
+
+  /* ---------- strengths (3 across) ---------- */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .cap{padding:24px;}
+  .cap h3{margin:0 0 9px;font-size:17px;font-weight:800;letter-spacing:-.02em;}
+  .cap p{margin:0;color:var(--muted);font-size:14.5px;}
+
+  /* ---------- projects (3 across, clickable) ---------- */
+  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .pcard{display:flex;flex-direction:column;padding:24px;text-decoration:none;color:inherit;position:relative;
+    transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;}
+  .pcard:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 18px 38px -20px rgba(37,99,235,.5);}
+  .pcard .kind{font-size:12.5px;color:var(--accent-ink);font-weight:700;margin-bottom:6px;}
+  .pcard h3{margin:0 0 14px;font-size:20px;font-weight:800;letter-spacing:-.025em;line-height:1.2;}
+  .pl{margin:0 0 10px;font-size:14px;color:var(--muted);line-height:1.5;display:flex;gap:9px;align-items:baseline;}
+  .pl b{flex:0 0 34px;color:var(--old);font-weight:700;font-size:12px;}
+  .pl.new b{color:var(--accent-ink);}
+  .result{margin:auto 0 0;background:var(--good-soft);border:1px solid var(--good-line);border-radius:11px;
+    padding:11px 14px;font-size:13.5px;color:var(--muted);}
+  .result .hi{color:var(--good);font-weight:800;}
+  .result .to{color:var(--faint);margin:0 4px;}
+  .result .sep{color:var(--border-strong);margin:0 8px;}
+  .pfoot{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{font-size:12px;color:var(--muted);background:var(--surface-2);border:1px solid var(--border);padding:4px 9px;border-radius:7px;}
+  .more{font-size:13px;font-weight:700;color:var(--accent-ink);white-space:nowrap;}
+
+  /* ---------- bottom band (3 across, not linear) ---------- */
+  .bottom{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:18px;align-items:start;}
+  .block{padding:24px;}
+  .block h3{margin:0 0 16px;font-size:15px;font-weight:800;letter-spacing:-.01em;}
+  .career .item{padding:14px 0;border-top:1px solid var(--border);}
+  .career .item:first-of-type{border-top:none;padding-top:0;}
+  .career .when{font-size:12.5px;color:var(--faint);margin-bottom:3px;}
+  .career .item b{font-size:15px;font-weight:700;}
+  .career .item p{margin:4px 0 0;font-size:14px;color:var(--muted);}
+  .career .item .detail{margin:9px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .career .item .detail li{font-size:12.5px;line-height:1.5;color:var(--muted);padding-left:13px;position:relative;}
+  .career .item .detail li::before{content:"–";position:absolute;left:0;color:var(--faint);}
+  .clist{margin:0;padding:0;list-style:none;}
+  .clist li{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:9px 0;border-top:1px solid var(--border);}
+  .clist li:first-child{border-top:none;padding-top:0;}
+  .clist .yr{color:var(--faint);font-size:12.5px;}
+  .kgrp+.kgrp{margin-top:14px;}
+  .kgrp .kl{font-size:12.5px;color:var(--faint);margin-bottom:7px;}
+  .kv{display:flex;flex-wrap:wrap;gap:6px;}
+  .kv span{font-size:13px;color:var(--ink);background:var(--surface-2);border:1px solid var(--border);padding:5px 10px;border-radius:7px;}
+
+  footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--border);color:var(--faint);font-size:13px;}
+
+  a{color:var(--accent-ink);}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px;}
+
+  /* ---------- modal ---------- */
+  .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;
+    padding:2.5vh 2vw;background:rgba(8,11,18,.74);backdrop-filter:blur(5px);}
+  .modal.open{display:flex;animation:fade .18s ease;}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .modal-box{position:relative;width:min(1300px,96vw);height:95vh;background:var(--surface);
+    border:1px solid var(--border);border-radius:16px;overflow:hidden;
+    box-shadow:0 40px 100px -24px rgba(0,0,0,.65);}
+  .modal-box iframe{width:100%;height:100%;border:0;display:block;background:#fff;}
+  .modal-close{position:absolute;top:12px;right:14px;z-index:2;width:40px;height:40px;border-radius:50%;
+    background:rgba(15,20,30,.82);color:#fff;border:1px solid rgba(255,255,255,.15);font-size:19px;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;}
+  .modal-close:hover{background:rgba(15,20,30,1);}
+
+  @media (max-width:1080px){
+    .hero{grid-template-columns:1fr;}
+    .grid3,.pgrid{grid-template-columns:1fr 1fr;}
+    .bottom{grid-template-columns:1fr;}
+  }
+  @media (max-width:680px){
+    .page{padding:28px 20px 56px;}
+    .hero-card{flex-direction:column;align-items:flex-start;gap:22px;padding:28px 24px;}
+    .hero h1{font-size:44px;}
+    .stmt{white-space:normal;font-size:21px;}
+    .grid3,.pgrid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<button class="toggle" id="tg" aria-label="테마 전환">테마</button>
+
+<div class="page">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="card hero-card">
+      <div class="photo">
+        <img src="assets/profile.png" alt="최성준 증명사진">
+      </div>
+      <div class="hero-body">
+        <h1>최성준</h1>
+        <p class="stmt">AI로 병목을 개선하여 <span class="mk">영업의 퀄리티</span>를 높이겠습니다.</p>
+        <div class="tags">
+          <span class="tag">#업무자동화</span>
+          <span class="tag">#프로세스개선</span>
+          <span class="tag">#AI활용</span>
+          <span class="tag">#영업기획</span>
+        </div>
+        <div class="contact">
+          <span><span class="k">TEL</span><span class="v num">010-9454-6380</span></span>
+          <span><span class="k">MAIL</span><span class="v">tjdwns95135@naver.com</span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STRENGTHS -->
+  <div class="sec-head"><h2>핵심 역량</h2><span class="rule"></span></div>
+  <div class="grid3">
+    <div class="card cap">
+      <h3>병목 진단</h3>
+      <p>반복 업무에서 시간을 가장 많이 할애하는 지점을<br>찾아, 무엇을 먼저 자동화할지 정합니다.</p>
+    </div>
+    <div class="card cap">
+      <h3>반복 업무 자동화</h3>
+      <p>여러 단계로 나뉜 수작업을 하나의 워크플로우로<br>설계합니다.</p>
+    </div>
+    <div class="card cap">
+      <h3>기존 시스템 연동</h3>
+      <p>데이터를 바로 못 꺼내는 사내 ERP·그룹웨어도 화면을 다루는 방식으로 이어 붙입니다.</p>
+    </div>
+  </div>
+
+  <!-- CAREER / EDU / SKILLS -->
+  <div class="sec-head"><h2>경력 · 교육 · 스킬</h2><span class="rule"></span></div>
+  <div class="bottom">
+    <div class="card block career">
+      <h3>경력 · 활동</h3>
+      <div class="item">
+        <div class="when num">2026.02 ~ 재직 중</div>
+        <b>광동헬스바이오 · 영업기획팀 사원</b>
+        <p>영업기획팀에서 영업·유관부서 운영 업무와 프로세스 개선을 담당합니다.</p>
+        <ul class="detail">
+          <li>제품 생산의뢰 · 출하요청서 등록</li>
+          <li>영업 및 유관부서 업무 프로세스 개선</li>
+          <li>매출 자료 유지 보수 및 디벨롭 (Excel)</li>
+          <li>영업 KPI 시각화</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="when num">2025.08</div>
+        <b>신한대학교 졸업</b>
+        <p>글로벌통상경영학과 · 식품영양학과 부전공.</p>
+      </div>
+      <div class="item">
+        <div class="when num">2024.08 ~ 2025.02</div>
+        <b>아이티윌 · 빅데이터 융합 머신러닝 전문가 양성 과정</b>
+        <p>Python·SQL·Tableau 기반 데이터 분석·머신러닝 프로젝트 수행. 성적우수상.</p>
+      </div>
+    </div>
+
+    <div class="card block">
+      <h3>자격증</h3>
+      <ul class="clist">
+        <li><span>빅데이터분석기사</span><span class="yr num">2025.07</span></li>
+        <li><span>SQL 개발자 (SQLD)</span><span class="yr num">2024.12</span></li>
+        <li><span>데이터분석 준전문가 (ADsP)</span><span class="yr num">2024.06</span></li>
+        <li><span>컴퓨터활용능력 1급</span><span class="yr num">2023.09</span></li>
+        <li><span>TOEIC Speaking · IM2</span><span class="yr num">2025.12</span></li>
+      </ul>
+    </div>
+
+    <div class="card block">
+      <h3>스킬</h3>
+      <div class="kgrp">
+        <div class="kl">자동화 · AI</div>
+        <div class="kv"><span>Python</span><span>FastAPI</span><span>Gemini API</span><span>Playwright</span><span>pyautogui</span></div>
+      </div>
+      <div class="kgrp">
+        <div class="kl">데이터 · 플랫폼</div>
+        <div class="kv"><span>SQL</span><span>Supabase</span><span>Apps Script</span><span>Sheets API</span><span>Tableau</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="sec-head"><h2>대표 프로젝트</h2><span class="hint">카드를 누르면 상세 자료가 팝업으로 열립니다</span><span class="rule"></span></div>
+  <div class="pgrid">
+
+    <a class="card pcard" href="projects/sales-meeting.html">
+      <div class="kind">영업 미팅·출장 관리</div>
+      <h3>영업 미팅 현황 관리</h3>
+      <p class="pl"><b>기존</b>카톡·화이트보드 이중 보고, 월말 일비 수기 취합</p>
+      <p class="pl new"><b>개선</b>구글 계정 모바일 웹앱에서 등록 → 현황·통계·<br>일비 자동 정리</p>
+      <div class="result">조회 <span class="num">3~5분</span><span class="to">→</span><span class="hi num">3초</span><span class="sep">·</span>일비 취합 <span class="num">30분</span><span class="to">→</span><span class="hi">즉시</span></div>
+      <div class="pfoot"><div class="stack"><span class="chip">Apps Script</span><span class="chip">Sheets</span></div><span class="more">자세히 ↗</span></div>
+    </a>
+
+    <a class="card pcard" href="projects/production-order.html">
+      <div class="kind">수주 처리 자동화</div>
+      <h3>생산의뢰(수주) 자동화</h3>
+      <p class="pl"><b>기존</b>그룹웨어 생산의뢰서와 ERP 수주서에 같은 내용 이중 입력</p>
+      <p class="pl new"><b>개선</b>파일 업로드 → AI가 값을 읽어 기안·ERP 입력까지 자동, 재확인으로 오류 제거</p>
+      <div class="result">건당 <span class="num">8~10분</span><span class="to">→</span><span class="hi num">2분 30초</span><span class="sep">·</span>입력 실수 <span class="hi num">0건</span></div>
+      <div class="pfoot"><div class="stack"><span class="chip">FastAPI</span><span class="chip">Gemini</span><span class="chip">Playwright</span></div><span class="more">자세히 ↗</span></div>
+    </a>
+
+    <a class="card pcard" href="projects/purchase.html">
+      <div class="kind">원료 구매·발주</div>
+      <h3>원료 구매·발주 자동화</h3>
+      <p class="pl"><b>기존</b>배합비·소요량·재고 비교를 전부 손으로 엑셀 계산</p>
+      <p class="pl new"><b>개선</b>데이터 자동 수집 → 하나의 DB에서 소요량·<br>부족분·단가 함께 확인</p>
+      <div class="result">건당 <span class="num">3분</span><span class="to">→</span><span class="hi num">1분 15초</span><span class="sep">·</span>자료 <span class="num">4곳</span><span class="to">→</span><span class="hi">하나로 통합</span></div>
+      <div class="pfoot"><div class="stack"><span class="chip">Supabase</span><span class="chip">Playwright</span></div><span class="more">자세히 ↗</span></div>
+    </a>
+
+  </div>
+
+  <footer>최성준 · 프로젝트 카드를 누르면 상세 발표 자료가 팝업으로 열립니다.</footer>
+
+</div>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="닫기">✕</button>
+    <iframe id="modalFrame" title="프로젝트 상세" allow="autoplay; fullscreen"></iframe>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var b=document.getElementById('tg');
+    function cur(){var r=document.documentElement;return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}
+    b.addEventListener('click',function(){document.documentElement.setAttribute('data-theme',cur()==='dark'?'light':'dark');});
+
+    var modal=document.getElementById('modal'),
+        frame=document.getElementById('modalFrame'),
+        closeBtn=document.getElementById('modalClose');
+    function openModal(src){frame.src=src;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+    function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');frame.src='about:blank';document.body.style.overflow='';}
+    document.querySelectorAll('.pcard').forEach(function(a){
+      a.addEventListener('click',function(e){e.preventDefault();openModal(a.getAttribute('href'));});
+    });
+    closeBtn.addEventListener('click',closeModal);
+    modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeModal();});
+  })();
+</script>
+</body>
+</html>
