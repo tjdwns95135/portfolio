@@ -5,31 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>원료 구매·발주 자동화 — 최성준 포트폴리오</title>
 <style>
+:root{
+ --page:#EDF1F9; --bg:#FFFFFF; --surface:#F5F7FB; --surfaceHi:#EDF1F9;
+ --line:#DBE2EF;
+ --accent:#2563EB; --accentSoft:#E9F0FF; --accentInk:#1B4FD1;
+ --green:#0E9E6E; --greenSoft:#E4F7EF;
+ --amber:#B45309; --amberSoft:#FEF3C7;
+ --text:#0F1826; --muted:#4E596F; --dim:#6E7A8E;
+ --shadow:0 1px 2px rgba(15,24,38,.05), 0 12px 30px -18px rgba(37,99,235,.22);
+}
+.stat-label{margin-top:8px;font-size:13px;font-weight:500;letter-spacing:.08em;color:var(--dim);}
   *{box-sizing:border-box;}
-  body{margin:0;background:#0C0F16;color:#E8ECF3;
+  body{margin:0;background:var(--page);color:var(--text);
     font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
     -webkit-font-smoothing:antialiased;}
   .bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;
-    gap:16px;padding:14px 22px;background:rgba(12,15,22,.85);backdrop-filter:blur(10px);
-    border-bottom:1px solid #1E2735;}
-  .bar .back{color:#9FB4FF;text-decoration:none;font-size:14px;font-weight:600;}
-  .bar .back:hover{color:#C3D2FF;}
-  .bar .ttl{font-size:14px;font-weight:700;color:#C9D2DF;}
+    gap:16px;padding:14px 22px;background:#FFFFFFEE;backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);}
+  .bar .back{color:var(--accent);text-decoration:none;font-size:14px;font-weight:600;}
+  .bar .back:hover{color:var(--accentInk);}
+  .bar .ttl{font-size:14px;font-weight:700;color:var(--muted);}
   .wrap{max-width:1040px;margin:0 auto;padding:34px 22px 80px;}
-  .lead{margin:0 0 32px;padding:22px 24px;background:#141B26;border:1px solid #223046;border-radius:14px;}
+  .lead{margin:0 0 32px;padding:22px 24px;background:var(--surface);border:1px solid var(--line);border-radius:14px;}
   .lead h1{margin:0 0 8px;font-size:26px;font-weight:700;letter-spacing:-.03em;}
-  .lead p{margin:0;color:#A9B4C4;font-size:15px;line-height:1.6;}
-  .slide{margin:16px 0;border-radius:12px;overflow:hidden;box-shadow:0 14px 40px -22px rgba(0,0,0,.8);
-    border:1px solid #1E2735;background:#fff;}
+  .lead p{margin:0;color:var(--muted);font-size:15px;line-height:1.6;}
+  .slide{margin:16px 0;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);
+    border:1px solid var(--line);background:var(--bg);}
   .slide img{display:block;width:100%;height:auto;}
-  .vwrap{margin:20px 0 24px;padding:20px;background:#0F1620;border:1px solid #223046;border-radius:14px;}
-  .vwrap .vh{font-size:14px;font-weight:700;color:#7FE0BB;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
-  .vh .dot{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 10px #34D399;}
+  .vwrap{margin:20px 0 24px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:14px;}
+  .vwrap .vh{font-size:14px;font-weight:700;color:var(--green);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+  .vh .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--greenSoft);}
   .vrow{display:grid;gap:16px;}
   .vrow.two{grid-template-columns:1fr 1fr;}
   .vrow figure{margin:0;}
-  .vrow figcaption{margin-top:8px;font-size:12px;color:#8895A8;text-align:center;}
-  video{width:100%;border-radius:10px;background:#000;display:block;border:1px solid #223046;}
+  .vrow figcaption{margin-top:8px;font-size:12px;color:var(--dim);text-align:center;}
+  video{width:100%;border-radius:10px;background:#000;display:block;border:1px solid var(--line);}
   @media (max-width:720px){.vrow.two{grid-template-columns:1fr;}}
 </style>
 </head>
@@ -41,27 +51,27 @@
   </div>
 
   <div class="wrap">
-    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(45,212,191,.28);border-radius:18px;padding:34px 34px 30px;box-shadow:0 20px 60px rgba(0,0,0,.45);margin-bottom:24px;">
-      <div style="font-size:13px;font-weight:600;letter-spacing:1.5px;color:#3FE0CC;text-transform:uppercase;">Project</div>
-      <h1 style="margin:8px 0 0;font-size:32px;font-weight:700;letter-spacing:-1px;color:#EEF4FA;line-height:1.2;">원료 구매·발주 자동화</h1>
+    <div style="background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:34px 34px 30px;box-shadow:var(--shadow);margin-bottom:24px;">
+      <div style="font-size:13px;font-weight:600;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;">Project</div>
+      <h1 style="margin:8px 0 0;font-size:32px;font-weight:700;letter-spacing:-1px;color:var(--text);line-height:1.2;">원료 구매·발주 자동화</h1>
       <div style="margin-top:24px;display:flex;flex-direction:column;gap:16px;">
         <div style="display:flex;gap:16px;align-items:flex-start;">
-          <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:#EEF4FA;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:8px;padding:6px 8px;">역할</span>
-          <p style="margin:0;font-size:16px;line-height:1.65;color:#D3DBE3;"><b style="color:#EEF4FA;">구매팀</b> — 요구사항 · 검증 &nbsp;&nbsp;<span style="color:#5E6B82;">|</span>&nbsp;&nbsp;<b style="color:#EEF4FA;">최성준</b> — 설계 · 개발</p>
+          <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:var(--text);background:var(--surfaceHi);border:1px solid var(--line);border-radius:8px;padding:6px 8px;">역할</span>
+          <p style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);"><b style="color:var(--text);">구매팀</b> — 요구사항 · 검증 &nbsp;&nbsp;<span style="color:var(--line);">|</span>&nbsp;&nbsp;<b style="color:var(--text);">최성준</b> — 설계 · 개발</p>
         </div>
         <div style="display:flex;gap:16px;align-items:flex-start;">
-          <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:#94A6B4;background:rgba(148,166,180,.14);border:1px solid rgba(148,166,180,.25);border-radius:8px;padding:6px 8px;">배경</span>
-          <p style="margin:0;font-size:16px;line-height:1.65;color:#D3DBE3;">ERP에서 데이터를 바로 꺼낼 방법이 없어, 배합비·소요량·재고 비교 등 전 과정을 손으로 엑셀에 옮겨 계산했습니다.</p>
+          <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:var(--dim);background:var(--surfaceHi);border:1px solid var(--line);border-radius:8px;padding:6px 8px;">배경</span>
+          <p style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">ERP에서 데이터를 바로 꺼낼 방법이 없어, 배합비·소요량·재고 비교 등 전 과정을 손으로 엑셀에 옮겨 계산했습니다.</p>
         </div>
         <div style="display:flex;gap:16px;align-items:flex-start;">
-          <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:#3FE0CC;background:rgba(45,212,191,.16);border:1px solid rgba(45,212,191,.32);border-radius:8px;padding:6px 8px;">문제 해결</span>
-          <p style="margin:0;font-size:16px;line-height:1.65;color:#D3DBE3;">필요한 데이터를 자동으로 모아, 하나의 데이터베이스에서 소요량·부족분·단가를 함께 확인하는 웹앱으로 정리했습니다.</p>
+          <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:var(--accent);background:var(--accentSoft);border:1px solid var(--accentSoft);border-radius:8px;padding:6px 8px;">문제 해결</span>
+          <p style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">필요한 데이터를 자동으로 모아, 하나의 데이터베이스에서 소요량·부족분·단가를 함께 확인하는 웹앱으로 정리했습니다.</p>
         </div>
         <div style="display:flex;gap:16px;align-items:flex-start;">
-          <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:#4ADE80;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.30);border-radius:8px;padding:6px 8px;">결과</span>
+          <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:var(--green);background:var(--greenSoft);border:1px solid var(--greenSoft);border-radius:8px;padding:6px 8px;">결과</span>
           <div style="flex:1;display:flex;gap:16px;">
-            <div style="flex:1;background:rgba(255,255,255,.04);border:1px solid #223046;border-radius:14px;padding:20px 24px;position:relative;overflow:hidden;"><div style="position:absolute;left:0;top:0;right:0;height:4px;background:#3FE0CC;"></div><div style="font-size:15px;color:#A9B4C4;">건당 처리 시간</div><div style="font-size:20px;color:#8895A8;margin-top:8px;">3분</div><div style="font-size:40px;font-weight:800;letter-spacing:-1px;color:#EEF4FA;margin-top:4px;">1분 15초</div><div style="font-size:15px;color:#A9B4C4;margin-top:16px;line-height:1.45;">배합비·소요량·재고 비교<br>수기 계산 → 자동 산출</div></div>
-            <div style="flex:1;background:rgba(255,255,255,.04);border:1px solid #223046;border-radius:14px;padding:20px 24px;position:relative;overflow:hidden;"><div style="position:absolute;left:0;top:0;right:0;height:4px;background:#4ADE80;"></div><div style="font-size:15px;color:#A9B4C4;">흩어진 자료</div><div style="font-size:20px;color:#8895A8;margin-top:8px;">4곳</div><div style="font-size:40px;font-weight:800;letter-spacing:-1px;color:#EEF4FA;margin-top:4px;">1개 DB</div><div style="font-size:15px;color:#A9B4C4;margin-top:16px;line-height:1.45;">소요량·부족분·단가를<br>한 곳에서 확인</div></div>
+            <div style="flex:1;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px 24px;position:relative;overflow:hidden;"><div style="position:absolute;left:0;top:0;right:0;height:4px;background:var(--accent);"></div><div style="font-size:40px;font-weight:800;letter-spacing:-1px;color:var(--text);line-height:1.1;">1분 15초</div><div class="stat-label">건당 처리 시간 3분 →</div><div style="font-size:15px;color:var(--dim);margin-top:16px;line-height:1.45;">배합비·소요량·재고 비교<br>수기 계산 → 자동 산출</div></div>
+            <div style="flex:1;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px 24px;position:relative;overflow:hidden;"><div style="position:absolute;left:0;top:0;right:0;height:4px;background:var(--green);"></div><div style="font-size:40px;font-weight:800;letter-spacing:-1px;color:var(--text);line-height:1.1;">1개 DB</div><div class="stat-label">흩어진 자료 4곳 →</div><div style="font-size:15px;color:var(--dim);margin-top:16px;line-height:1.45;">소요량·부족분·단가를<br>한 곳에서 확인</div></div>
           </div>
         </div>
       </div>

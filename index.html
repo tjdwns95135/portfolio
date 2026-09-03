@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" data-theme="light">
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,33 +12,13 @@
     --accent:#2563EB; --accent-ink:#1B4FD1; --accent-soft:#E9F0FF;
     --good:#0E9E6E; --good-soft:#E4F7EF; --good-line:#BFE9D7;
     --old:#C2603F;
+    --amber:#B45309; --amber-soft:#FEF3C7;
+    --violet:#6D28D9; --violet-soft:#F3EDFF;
+    --cyan:#0E7490;  --cyan-soft:#E0F2FE;
+    --red:#DC2626;   --red-soft:#FEE2E2;
     --shadow:0 1px 2px rgba(15,24,38,.05), 0 12px 30px -18px rgba(37,99,235,.22);
     --sans:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,-apple-system,"Segoe UI",sans-serif;
   }
-  @media (prefers-color-scheme:dark){
-    :root{
-      --bg:#0E131C; --surface:#161D28; --surface-2:#1C2432;
-      --ink:#EEF2F8; --muted:#A4B0C2; --faint:#6E7A8C;
-      --border:#27303D; --border-strong:#3A4655;
-      --accent:#6C93FF; --accent-ink:#B6CBFF; --accent-soft:#18233C;
-      --good:#34D399; --good-soft:#12271F; --good-line:#24523D;
-      --old:#E0876B;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 34px -20px rgba(0,0,0,.7);
-    }
-  }
-  :root[data-theme="light"]{
-    --bg:#F5F7FB;--surface:#FFFFFF;--surface-2:#EDF1F9;--ink:#0F1826;--muted:#4E596F;--faint:#6E7A8E;
-    --border:#DBE2EF;--border-strong:#C7D1E2;--accent:#2563EB;--accent-ink:#1B4FD1;--accent-soft:#E9F0FF;
-    --good:#0E9E6E;--good-soft:#E4F7EF;--good-line:#BFE9D7;--old:#C2603F;
-    --shadow:0 1px 2px rgba(15,24,38,.05), 0 12px 30px -18px rgba(37,99,235,.22);
-  }
-  :root[data-theme="dark"]{
-    --bg:#0E131C;--surface:#161D28;--surface-2:#1C2432;--ink:#EEF2F8;--muted:#A4B0C2;--faint:#6E7A8C;
-    --border:#27303D;--border-strong:#3A4655;--accent:#6C93FF;--accent-ink:#B6CBFF;--accent-soft:#18233C;
-    --good:#34D399;--good-soft:#12271F;--good-line:#24523D;--old:#E0876B;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 34px -20px rgba(0,0,0,.7);
-  }
-
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
     line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:-.011em;}
@@ -46,9 +26,6 @@
   .num{font-variant-numeric:tabular-nums;}
   .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);}
 
-  .toggle{position:fixed;top:20px;right:20px;z-index:20;font-size:13px;cursor:pointer;
-    padding:8px 16px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:var(--muted);}
-  .toggle:hover{color:var(--ink);border-color:var(--border-strong);}
 
   /* ---------- HERO (single wide card) ---------- */
   .hero{margin-bottom:16px;}
@@ -60,6 +37,13 @@
   .hero h1{font-size:56px;line-height:1;font-weight:700;margin:0 0 16px;letter-spacing:-.04em;}
   .stmt{font-size:24px;font-weight:700;line-height:1.4;letter-spacing:-.03em;margin:0 0 24px;white-space:nowrap;}
   .stmt .mk{color:var(--accent-ink);}
+  /* ---------- hero stats (레퍼런스: 숫자 위 / 라벨 아래) ---------- */
+  .stats{display:flex;align-items:flex-start;margin-bottom:24px;}
+  .stat{padding:0 24px;}
+  .stat:first-child{padding-left:0;}
+  .stat+.stat{border-left:1px solid var(--border);}
+  .stat-num{font-size:40px;font-weight:800;line-height:1.15;letter-spacing:-.03em;color:var(--ink);white-space:nowrap;}
+  .stat-label{margin-top:8px;font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--faint);white-space:nowrap;}
   .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
   .tag{font-size:13px;color:var(--accent-ink);background:var(--accent-soft);padding:8px 13px;border-radius:8px;}
   .contact{display:flex;flex-wrap:wrap;gap:8px 32px;padding-top:16px;border-top:1px solid var(--border);}
@@ -154,7 +138,6 @@
 </style>
 </head>
 <body>
-<button class="toggle" id="tg" aria-label="테마 전환">테마</button>
 
 <div class="page">
 
@@ -164,10 +147,10 @@
       <div class="hero-body">
         <h1>최성준</h1>
         <p class="stmt">병목을 개선하여 <span class="mk">업무의 퀄리티</span>를 높이겠습니다.</p>
-        <div class="tags">
-          <div class="result">수주 처리 <span class="num">8~10분</span><span class="to">→</span><span class="hi num">2분 30초</span></div>
-          <div class="result">입력 실수 <span class="hi num">0건</span></div>
-          <div class="result">흩어진 자료 <span class="num">4곳</span><span class="to">→</span><span class="hi">1개 DB</span></div>
+        <div class="stats">
+          <div class="stat"><div class="stat-num num">2분 30초</div><div class="stat-label">수주 처리 8~10분 →</div></div>
+          <div class="stat"><div class="stat-num num">0건</div><div class="stat-label">입력 실수</div></div>
+          <div class="stat"><div class="stat-num num">1개 DB</div><div class="stat-label">흩어진 자료 4곳 →</div></div>
         </div>
       </div>
     </div>
@@ -311,10 +294,6 @@
 
 <script>
   (function(){
-    var b=document.getElementById('tg');
-    function cur(){var r=document.documentElement;return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}
-    b.addEventListener('click',function(){document.documentElement.setAttribute('data-theme',cur()==='dark'?'light':'dark');});
-
     var modal=document.getElementById('modal'),
         frame=document.getElementById('modalFrame'),
         closeBtn=document.getElementById('modalClose');
