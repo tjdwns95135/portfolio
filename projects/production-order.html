@@ -9,24 +9,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
- --bg:#0D1117; --panel:#141B24; --surface:#1A2230; --surfaceHi:#232E3E;
- --line:#2C3A4A; --accent:#2DD4BF; --accentSoft:#0F2B2A; --amber:#F5A524;
- --amberSoft:#2A2113; --violet:#A78BFA; --violetSoft:#1E1A33; --green:#4ADE80;
- --red:#F76C6C; --redSoft:#2A1519; --text:#E8EEF4; --muted:#94A6B4; --dim:#5A6B78;
+ --page:#EDF1F9; --bg:#FFFFFF; --panel:#F5F7FB; --surface:#F5F7FB; --surfaceHi:#EDF1F9;
+ --line:#DBE2EF;
+ --accent:#2563EB; --accentSoft:#E9F0FF; --accentInk:#1B4FD1;
+ --cyan:#0E7490;   --cyanSoft:#E0F2FE;
+ --green:#0E9E6E;  --greenSoft:#E4F7EF;
+ --amber:#B45309;  --amberSoft:#FEF3C7;
+ --violet:#6D28D9; --violetSoft:#F3EDFF;
+ --red:#DC2626;    --redSoft:#FEE2E2;
+ --text:#0F1826; --muted:#4E596F; --dim:#6E7A8E;
+ --shadow:0 1px 2px rgba(15,24,38,.05), 0 12px 30px -18px rgba(37,99,235,.22);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{background:#05080C;}
+html,body{background:var(--page);}
 body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  -webkit-print-color-adjust:exact;print-color-adjust:exact;word-break:keep-all;}
 .mono{font-family:'Roboto Mono','Consolas',monospace;}
-.toolbar{position:fixed;top:0;left:0;right:0;height:46px;background:#0a0e13ee;backdrop-filter:blur(6px);
+.toolbar{position:fixed;top:0;left:0;right:0;height:46px;background:#FFFFFFEE;backdrop-filter:blur(6px);
  border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;
  padding:0 22px;z-index:99;font-size:13px;color:var(--muted);}
 .toolbar b{color:var(--text);font-weight:700;}
 .toolbar .hint{color:var(--dim);}
 .toolbar .hint kbd{background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:2px 7px;color:var(--text);font-family:inherit;}
-.toolbar .back{color:#9FB4FF;text-decoration:none;font-size:14px;font-weight:600;}
-.toolbar .back:hover{color:#C3D2FF;}
+.toolbar .back{color:var(--accent);text-decoration:none;font-size:14px;font-weight:600;}
+.toolbar .back:hover{color:var(--accentInk);}
+.stat-label{margin-top:8px;font-size:13px;font-weight:500;letter-spacing:.08em;color:var(--dim);}
+.bignum{line-height:1.1;}
 .deck{display:flex;flex-direction:column;align-items:center;gap:24px;padding:74px 16px 56px;}
 .fold{width:1280px;flex:0 0 auto;}
 .fold>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
@@ -38,7 +46,7 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 .fold>summary:hover{color:var(--text);border-color:var(--accent);}
 .fold[open]>summary{margin-bottom:24px;}
 .slide{width:1280px;height:720px;background:var(--bg);position:relative;overflow:hidden;
- border-radius:14px;box-shadow:0 24px 70px rgba(0,0,0,.55);padding:50px 64px;flex:0 0 auto;}
+ border-radius:14px;box-shadow:var(--shadow);padding:50px 64px;flex:0 0 auto;}
 .kicker{font-size:15px;color:var(--accent);letter-spacing:1.5px;font-weight:500;}
 .title{font-size:46px;font-weight:700;line-height:1.14;letter-spacing:-1px;margin-top:10px;}
 .title.sm{font-size:40px;}
@@ -60,7 +68,7 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 .placeholder.filled{border-style:solid;}
 .placeholder.filled .ph-empty{display:none;}
 .placeholder .pi{font-size:30px;}
-.placeholder .pt{font-size:20px;color:#7e8ea0;font-weight:500;}
+.placeholder .pt{font-size:20px;color:var(--dim);font-weight:500;}
 .placeholder .ps{font-size:13px;}
 .pill{display:inline-flex;align-items:center;padding:9px 16px;border-radius:100px;font-size:14px;font-weight:500;}
 .flow{display:flex;align-items:center;}
@@ -87,25 +95,25 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 </head>
 <body>
 <section style="max-width:900px;margin:0 auto;padding:80px 22px 20px;font-family:'Noto Sans KR','Malgun Gothic',sans-serif;">
- <div style="background:rgba(255,255,255,.04);border:1px solid rgba(45,212,191,.28);border-radius:18px;padding:34px 34px 30px;box-shadow:0 20px 60px rgba(0,0,0,.45);">
-  <div style="font-size:13px;font-weight:600;letter-spacing:1.5px;color:#3FE0CC;text-transform:uppercase;">Project</div>
-  <h1 style="margin:8px 0 0;font-size:32px;font-weight:700;letter-spacing:-1px;color:#EEF4FA;line-height:1.2;">생산의뢰(수주) 자동화</h1>
+ <div style="background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:34px 34px 30px;box-shadow:var(--shadow);">
+  <div style="font-size:13px;font-weight:600;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;">Project</div>
+  <h1 style="margin:8px 0 0;font-size:32px;font-weight:700;letter-spacing:-1px;color:var(--text);line-height:1.2;">생산의뢰(수주) 자동화</h1>
   <div style="margin-top:24px;display:flex;flex-direction:column;gap:16px;">
    <div style="display:flex;gap:16px;align-items:flex-start;">
-    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:#EEF4FA;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:8px;padding:6px 8px;">역할</span>
-    <p style="margin:0;font-size:16px;line-height:1.65;color:#D3DBE3;"><b style="color:#EEF4FA;">최성준</b> — 문제 정의 · 설계 · 개발 <span style="color:#94A6B4;">(단독 진행)</span></p>
+    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:var(--text);background:var(--surfaceHi);border:1px solid var(--line);border-radius:8px;padding:6px 8px;">역할</span>
+    <p style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);"><b style="color:var(--text);">최성준</b> — 문제 정의 · 설계 · 개발 <span style="color:var(--dim);">(단독 진행)</span></p>
    </div>
    <div style="display:flex;gap:16px;align-items:flex-start;">
-    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:#94A6B4;background:rgba(148,166,180,.14);border:1px solid rgba(148,166,180,.25);border-radius:8px;padding:6px 8px;">배경</span>
-    <p style="margin:0;font-size:16px;line-height:1.65;color:#D3DBE3;">수주가 들어오면 그룹웨어 생산의뢰서와 ERP 수주서에 같은 내용을 두 번 입력하고, 메일 속 특이사항을 여러 항목으로 나눠 옮겨 적어야 했습니다.</p>
+    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:var(--dim);background:var(--surfaceHi);border:1px solid var(--line);border-radius:8px;padding:6px 8px;">배경</span>
+    <p style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">수주가 들어오면 그룹웨어 생산의뢰서와 ERP 수주서에 같은 내용을 두 번 입력하고, 메일 속 특이사항을 여러 항목으로 나눠 옮겨 적어야 했습니다.</p>
    </div>
    <div style="display:flex;gap:16px;align-items:flex-start;">
-    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:#3FE0CC;background:rgba(45,212,191,.16);border:1px solid rgba(45,212,191,.32);border-radius:8px;padding:6px 8px;">문제 해결</span>
-    <p style="margin:0;font-size:16px;line-height:1.65;color:#D3DBE3;">메일, 발주서, 견적서를 올리면 AI가 필요한 값을 읽어내고, 그룹웨어 기안과 ERP 입력까지 자동으로 처리합니다. 입력한 값을 다시 읽어 확인해 오류를 없앴습니다.</p>
+    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:var(--accent);background:var(--accentSoft);border:1px solid var(--accentSoft);border-radius:8px;padding:6px 8px;">문제 해결</span>
+    <p style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">메일, 발주서, 견적서를 올리면 AI가 필요한 값을 읽어내고, 그룹웨어 기안과 ERP 입력까지 자동으로 처리합니다. 입력한 값을 다시 읽어 확인해 오류를 없앴습니다.</p>
    </div>
    <div style="display:flex;gap:16px;align-items:flex-start;">
-    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:#4ADE80;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.30);border-radius:8px;padding:6px 8px;">결과</span>
-    <p style="margin:0;font-size:16px;line-height:1.65;color:#E4ECF2;font-weight:600;">건당 8~10분 → 2분 30초 · 입력 실수 주 1~2건 → 0건</p>
+    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:var(--green);background:var(--greenSoft);border:1px solid var(--greenSoft);border-radius:8px;padding:6px 8px;">결과</span>
+    <p style="margin:0;font-size:16px;line-height:1.65;color:var(--text);font-weight:600;">건당 8~10분 → 2분 30초 · 입력 실수 주 1~2건 → 0건</p>
    </div>
   </div>
  </div>
@@ -142,18 +150,16 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  <h2 class="title">사람이 두 시스템에 옮겨 적던 수주 처리를,<br>업로드 한 번으로 끝낸다.</h2>
  <div style="display:flex;gap:22px;margin-top:50px;">
    <div class="card" style="flex:1;"><div class="bars-top" style="background:var(--accent)"></div>
-     <div class="c-muted" style="font-size:18px;">건당 처리 시간</div>
-     <div class="c-dim" style="font-size:23px;margin-top:10px;">8~10분</div>
-     <div class="bignum c-accent" style="font-weight:800;font-size:58px;margin-top:6px;">2분 30초</div>
+     <div class="bignum c-accent" style="font-weight:800;font-size:56px;">2분 30초</div>
+     <div class="stat-label">건당 처리 시간 8~10분 →</div>
      <div class="c-muted" style="font-size:16px;margin-top:16px;line-height:1.45;">추출 내용 확인만 남기고<br>반복 입력 전부 자동화</div></div>
    <div class="card" style="flex:1;"><div class="bars-top" style="background:var(--green)"></div>
-     <div class="c-muted" style="font-size:18px;">주간 입력 실수</div>
-     <div class="c-dim" style="font-size:23px;margin-top:10px;">1~2건</div>
-     <div class="bignum c-green" style="font-weight:800;font-size:58px;margin-top:6px;">0건</div>
+     <div class="bignum c-green" style="font-weight:800;font-size:56px;">0건</div>
+     <div class="stat-label">주간 입력 실수 1~2건 →</div>
      <div class="c-muted" style="font-size:16px;margin-top:16px;line-height:1.45;">AI 추출 + 정규식 교차검증<br>+ readback 검증</div></div>
    <div class="card" style="flex:1;"><div class="bars-top" style="background:var(--violet)"></div>
-     <div class="c-muted" style="font-size:18px;">동시 처리</div>
-     <div class="bignum c-violet" style="font-weight:800;font-size:52px;margin-top:14px;">2 시스템</div>
+     <div class="bignum c-violet" style="font-weight:800;font-size:56px;">2 시스템</div>
+     <div class="stat-label">동시 처리</div>
      <div class="c-muted" style="font-size:16px;margin-top:18px;line-height:1.45;">그룹웨어 기안(브라우저)과<br>ERP 입력(데스크탑) 병렬 큐</div></div>
  </div>
  <div class="footer"><span>발주서·견적서 → 생산의뢰서 → ERP 자동화</span><span class="mono">02 / 20</span></div>
@@ -165,7 +171,7 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  <h2 class="title sm">수주 1건에 두 시스템 + 특이사항 4곳 수기</h2>
  <p class="subtitle">제품생산의뢰 한 건마다 그룹웨어 [제품생산의뢰서] 결재 상신과 ERP [수주서]를 함께 작성해야 했습니다.</p>
  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;">
-   <div class="card" style="height:182px;"><div class="bar" style="background:var(--red)"></div><div class="mono c-red" style="font-size:26px;font-weight:700;">01</div><div style="font-size:28px;font-weight:700;margin-top:8px;">두 시스템에 이중 입력</div><div class="c-muted" style="font-size:16px;margin-top:12px;line-height:1.5;">그룹웨어 [제품생산의뢰서] 결재 상신 + ERP [수주서]를 매 건 함께 작성</div></div><div class="card" style="height:182px;"><div class="bar" style="background:var(--red)"></div><div class="mono c-red" style="font-size:26px;font-weight:700;">02</div><div style="font-size:28px;font-weight:700;margin-top:8px;">특이사항을 4곳에 수기</div><div class="c-muted" style="font-size:16px;margin-top:12px;line-height:1.5;">메일 특이사항을 전체·원료·자재 특이사항 + 결재의견에 일일이 나눠 기재</div></div><div class="card" style="height:182px;"><div class="bar" style="background:var(--red)"></div><div class="mono c-red" style="font-size:26px;font-weight:700;">03</div><div style="font-size:28px;font-weight:700;margin-top:8px;">제목·결재선·긴급 수동</div><div class="c-muted" style="font-size:16px;margin-top:12px;line-height:1.5;">양식 복사→붙여넣기, 결재선 지정, 긴급 건은 제목 [긴급]+상신 시 긴급 체크</div></div><div class="card" style="height:182px;"><div class="bar" style="background:var(--red)"></div><div class="mono c-red" style="font-size:26px;font-weight:700;">04</div><div style="font-size:28px;font-weight:700;margin-top:8px;">많을 땐 20건, 휴먼에러</div><div class="c-muted" style="font-size:16px;margin-top:12px;line-height:1.5;">건당 8~10분 × 하루 다수 → 수량·납기 오기, 특이사항 누락 등 실수 빈번</div></div>
+   <div class="card" style="height:148px;"><div class="bar" style="background:var(--red)"></div><div style="display:flex;align-items:baseline;gap:16px;"><span class="mono" style="font-size:28px;font-weight:700;color:var(--accent);">01</span><span style="font-size:28px;font-weight:700;color:var(--text);">두 시스템에 이중 입력</span></div><div class="c-muted" style="font-size:16px;margin-top:12px;line-height:1.5;">그룹웨어 [제품생산의뢰서] 결재 상신 + ERP [수주서]를 매 건 함께 작성</div></div><div class="card" style="height:148px;"><div class="bar" style="background:var(--red)"></div><div style="display:flex;align-items:baseline;gap:16px;"><span class="mono" style="font-size:28px;font-weight:700;color:var(--accent);">02</span><span style="font-size:28px;font-weight:700;color:var(--text);">특이사항을 4곳에 수기</span></div><div class="c-muted" style="font-size:16px;margin-top:12px;line-height:1.5;">메일 특이사항을 전체·원료·자재 특이사항 + 결재의견에 일일이 나눠 기재</div></div><div class="card" style="height:148px;"><div class="bar" style="background:var(--red)"></div><div style="display:flex;align-items:baseline;gap:16px;"><span class="mono" style="font-size:28px;font-weight:700;color:var(--accent);">03</span><span style="font-size:28px;font-weight:700;color:var(--text);">제목·결재선·긴급 수동</span></div><div class="c-muted" style="font-size:16px;margin-top:12px;line-height:1.5;">양식 복사→붙여넣기, 결재선 지정, 긴급 건은 제목 [긴급]+상신 시 긴급 체크</div></div><div class="card" style="height:148px;"><div class="bar" style="background:var(--red)"></div><div style="display:flex;align-items:baseline;gap:16px;"><span class="mono" style="font-size:28px;font-weight:700;color:var(--accent);">04</span><span style="font-size:28px;font-weight:700;color:var(--text);">많을 땐 20건, 휴먼에러</span></div><div class="c-muted" style="font-size:16px;margin-top:12px;line-height:1.5;">건당 8~10분 × 하루 다수 → 수량·납기 오기, 특이사항 누락 등 실수 빈번</div></div>
  </div>
  <div class="footer"><span>발주서·견적서 → 생산의뢰서 → ERP 자동화</span><span class="mono">03 / 20</span></div>
 </section>
@@ -591,18 +597,16 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  <h2 class="title sm">성과 — 시간·오류를 동시에 줄였다</h2>
  <div style="display:flex;gap:20px;margin-top:28px;">
    <div class="card" style="flex:1;"><div class="bars-top" style="background:var(--accent)"></div>
-     <div class="c-muted" style="font-size:16px;">건당 처리 시간</div>
-     <div class="c-dim" style="font-size:20px;margin-top:6px;">8~10분</div>
-     <div class="bignum c-accent" style="font-weight:800;font-size:54px;margin-top:4px;">2분 30초</div>
+     <div class="bignum c-accent" style="font-weight:800;font-size:56px;">2분 30초</div>
+     <div class="stat-label">건당 처리 시간 8~10분 →</div>
      <div class="c-accent" style="font-size:15px;margin-top:6px;">약 69% 단축</div></div>
    <div class="card" style="flex:1;"><div class="bars-top" style="background:var(--green)"></div>
-     <div class="c-muted" style="font-size:16px;">주간 입력 실수</div>
-     <div class="c-dim" style="font-size:20px;margin-top:6px;">1~2건</div>
-     <div class="bignum c-green" style="font-weight:800;font-size:54px;margin-top:4px;">0건</div>
+     <div class="bignum c-green" style="font-weight:800;font-size:56px;">0건</div>
+     <div class="stat-label">주간 입력 실수 1~2건 →</div>
      <div class="c-green" style="font-size:15px;margin-top:6px;">오류율 100% 제거</div></div>
    <div class="card" style="flex:1;"><div class="bars-top" style="background:var(--violet)"></div>
-     <div class="c-muted" style="font-size:16px;">데이터 정합성</div>
-     <div class="bignum c-violet" style="font-weight:800;font-size:54px;margin-top:14px;">100%</div>
+     <div class="bignum c-violet" style="font-weight:800;font-size:56px;">100%</div>
+     <div class="stat-label">데이터 정합성</div>
      <div class="c-muted" style="font-size:15px;margin-top:8px;line-height:1.4;">AI추출+정규식+재확인<br>3중 검증</div></div>
  </div>
  <div class="card" style="margin-top:20px;padding:20px 26px;">
