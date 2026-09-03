@@ -53,7 +53,7 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 .bullets li{position:relative;padding-left:24px;color:var(--text);font-size:17px;line-height:1.45;}
 .bullets li::before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--accent);}
 .bullets.muted li{color:var(--muted);}
-.bullets.sm li{font-size:15.5px;gap:9px;}
+.bullets.sm li{font-size:16px;gap:9px;}
 .placeholder{position:relative;overflow:hidden;border:2px dashed var(--line);border-radius:16px;background:var(--panel);
  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;color:var(--dim);text-align:center;}
 .capshot{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--panel);}
@@ -92,20 +92,20 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
   <h1 style="margin:8px 0 0;font-size:32px;font-weight:900;letter-spacing:-1px;color:#EEF4FA;line-height:1.2;">생산의뢰(수주) 자동화</h1>
   <div style="margin-top:26px;display:flex;flex-direction:column;gap:18px;">
    <div style="display:flex;gap:16px;align-items:flex-start;">
-    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12.5px;font-weight:700;color:#EEF4FA;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:8px;padding:6px 8px;">역할</span>
-    <p style="margin:0;font-size:15.5px;line-height:1.65;color:#D5DCE7;"><span style="font-size:13px;font-weight:700;color:#F76C6C;">[확인필요]</span> <span style="color:#5E6B82;">협업 부서 / 본인 담당 구분을 여기에 채워 주세요.</span></p>
+    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:#EEF4FA;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:8px;padding:6px 8px;">역할</span>
+    <p style="margin:0;font-size:16px;line-height:1.65;color:#D5DCE7;"><span style="font-size:13px;font-weight:700;color:#F76C6C;">[확인필요]</span> <span style="color:#5E6B82;">협업 부서 / 본인 담당 구분을 여기에 채워 주세요.</span></p>
    </div>
    <div style="display:flex;gap:16px;align-items:flex-start;">
-    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12.5px;font-weight:700;color:#94A6B4;background:rgba(148,166,180,.14);border:1px solid rgba(148,166,180,.25);border-radius:8px;padding:6px 8px;">배경</span>
-    <p style="margin:0;font-size:15.5px;line-height:1.65;color:#D3DBE3;">수주가 들어오면 그룹웨어 생산의뢰서와 ERP 수주서에 같은 내용을 두 번 입력하고, 메일 속 특이사항을 여러 항목으로 나눠 옮겨 적어야 했습니다.</p>
+    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:#94A6B4;background:rgba(148,166,180,.14);border:1px solid rgba(148,166,180,.25);border-radius:8px;padding:6px 8px;">배경</span>
+    <p style="margin:0;font-size:16px;line-height:1.65;color:#D3DBE3;">수주가 들어오면 그룹웨어 생산의뢰서와 ERP 수주서에 같은 내용을 두 번 입력하고, 메일 속 특이사항을 여러 항목으로 나눠 옮겨 적어야 했습니다.</p>
    </div>
    <div style="display:flex;gap:16px;align-items:flex-start;">
-    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12.5px;font-weight:700;color:#3FE0CC;background:rgba(45,212,191,.16);border:1px solid rgba(45,212,191,.32);border-radius:8px;padding:6px 8px;">문제 해결</span>
-    <p style="margin:0;font-size:15.5px;line-height:1.65;color:#D3DBE3;">메일, 발주서, 견적서를 올리면 AI가 필요한 값을 읽어내고, 그룹웨어 기안과 ERP 입력까지 자동으로 처리합니다. 입력한 값을 다시 읽어 확인해 오류를 없앴습니다.</p>
+    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:#3FE0CC;background:rgba(45,212,191,.16);border:1px solid rgba(45,212,191,.32);border-radius:8px;padding:6px 8px;">문제 해결</span>
+    <p style="margin:0;font-size:16px;line-height:1.65;color:#D3DBE3;">메일, 발주서, 견적서를 올리면 AI가 필요한 값을 읽어내고, 그룹웨어 기안과 ERP 입력까지 자동으로 처리합니다. 입력한 값을 다시 읽어 확인해 오류를 없앴습니다.</p>
    </div>
    <div style="display:flex;gap:16px;align-items:flex-start;">
-    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12.5px;font-weight:700;color:#4ADE80;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.30);border-radius:8px;padding:6px 8px;">결과</span>
-    <p style="margin:0;font-size:15.5px;line-height:1.65;color:#E4ECF2;font-weight:600;">건당 8~10분 → 2분 30초 · 입력 실수 주 1~2건 → 0건</p>
+    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:#4ADE80;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.30);border-radius:8px;padding:6px 8px;">결과</span>
+    <p style="margin:0;font-size:16px;line-height:1.65;color:#E4ECF2;font-weight:600;">건당 8~10분 → 2분 30초 · 입력 실수 주 1~2건 → 0건</p>
    </div>
   </div>
  </div>
@@ -197,22 +197,22 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:26px;">
    <div class="card" style="height:158px;"><div class="bar" style="background:var(--accent)"></div>
      <div style="font-size:18px;font-weight:700;">검증을 의무화</div>
-     <div class="c-muted" style="font-size:14.5px;margin-top:8px;line-height:1.5;">“에러 없음 ≠ 성공”. ERP 입력은 readback, AI 추출은 정규식으로 매번 재확인</div></div>
+     <div class="c-muted" style="font-size:15px;margin-top:8px;line-height:1.5;">“에러 없음 ≠ 성공”. ERP 입력은 readback, AI 추출은 정규식으로 매번 재확인</div></div>
    <div class="card" style="height:158px;"><div class="bar" style="background:var(--amber)"></div>
      <div style="font-size:18px;font-weight:700;">맥락으로 구분</div>
-     <div class="c-muted" style="font-size:14.5px;margin-top:8px;line-height:1.5;">같은 ‘제형’ 라벨도 어느 표에 속하냐로 판별 — 사후 필터가 아니라 소스 단계 차단</div></div>
+     <div class="c-muted" style="font-size:15px;margin-top:8px;line-height:1.5;">같은 ‘제형’ 라벨도 어느 표에 속하냐로 판별 — 사후 필터가 아니라 소스 단계 차단</div></div>
    <div class="card" style="height:158px;"><div class="bar" style="background:var(--violet)"></div>
      <div style="font-size:18px;font-weight:700;">AI를 의심</div>
-     <div class="c-muted" style="font-size:14.5px;margin-top:8px;line-height:1.5;">환각·오독을 전제로 설계. AI는 추출 도구, 최종 판단은 규칙 기반 로직</div></div>
+     <div class="c-muted" style="font-size:15px;margin-top:8px;line-height:1.5;">환각·오독을 전제로 설계. AI는 추출 도구, 최종 판단은 규칙 기반 로직</div></div>
    <div class="card" style="height:158px;"><div class="bar" style="background:var(--accent)"></div>
      <div style="font-size:18px;font-weight:700;">보안을 기본값으로</div>
-     <div class="c-muted" style="font-size:14.5px;margin-top:8px;line-height:1.5;">관리자 권한 로컬 서버를 ‘localhost니까 안전’으로 두지 않고 다층 방어</div></div>
+     <div class="c-muted" style="font-size:15px;margin-top:8px;line-height:1.5;">관리자 권한 로컬 서버를 ‘localhost니까 안전’으로 두지 않고 다층 방어</div></div>
    <div class="card" style="height:158px;"><div class="bar" style="background:var(--green)"></div>
      <div style="font-size:18px;font-weight:700;">사람을 루프에</div>
-     <div class="c-muted" style="font-size:14.5px;margin-top:8px;line-height:1.5;">추출 결과 확인 단계를 의도적으로 남겨 오류 폭주 방지 — 완전 자동화를 욕심내지 않음</div></div>
+     <div class="c-muted" style="font-size:15px;margin-top:8px;line-height:1.5;">추출 결과 확인 단계를 의도적으로 남겨 오류 폭주 방지 — 완전 자동화를 욕심내지 않음</div></div>
    <div class="card" style="height:158px;"><div class="bar" style="background:var(--amber)"></div>
      <div style="font-size:18px;font-weight:700;">실패를 설계</div>
-     <div class="c-muted" style="font-size:14.5px;margin-top:8px;line-height:1.5;">즉시 retry·ESC×3 중지·포커스 락으로 충돌과 실패 상황까지 대비</div></div>
+     <div class="c-muted" style="font-size:15px;margin-top:8px;line-height:1.5;">즉시 retry·ESC×3 중지·포커스 락으로 충돌과 실패 상황까지 대비</div></div>
  </div>
  <div class="footer"><span>발주서·견적서 → 생산의뢰서 → ERP 자동화</span><span class="mono">05 / 20</span></div>
 </section>
@@ -243,7 +243,7 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  </div>
  <div class="card" style="margin-top:18px;background:var(--accentSoft);padding:18px 24px;"><div class="bar" style="background:var(--accent)"></div>
    <span class="c-accent" style="font-size:18px;font-weight:700;">AI 지어내기 방지 &nbsp;</span>
-   <span class="c-muted" style="font-size:15.5px;line-height:1.5;">텍스트·Vision <b class="c-text">이중 추출 비교</b> · <b class="c-text">정규식 패턴 교차검증</b> · 포장규격 기반 추론 대조 · <span class="mono" style="font-size:14px;">mm</span> 치수 등 생성값 제거 — AI는 추출, 최종 검증은 규칙이 담당.</span>
+   <span class="c-muted" style="font-size:16px;line-height:1.5;">텍스트·Vision <b class="c-text">이중 추출 비교</b> · <b class="c-text">정규식 패턴 교차검증</b> · 포장규격 기반 추론 대조 · <span class="mono" style="font-size:14px;">mm</span> 치수 등 생성값 제거 — AI는 추출, 최종 검증은 규칙이 담당.</span>
  </div>
  <div class="footer"><span>발주서·견적서 → 생산의뢰서 → ERP 자동화</span><span class="mono">06 / 20</span></div>
 </section>
@@ -273,13 +273,13 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
    <div style="flex:1;display:flex;flex-direction:column;gap:14px;">
      <div class="card" style="background:var(--amberSoft);"><div class="bar" style="background:var(--amber)"></div>
        <span class="c-amber" style="font-size:20px;font-weight:700;">🚨 긴급 자동 감지</span>
-       <div class="c-muted" style="font-size:15.5px;margin-top:8px;line-height:1.5;">메일에 “긴급” 키워드가 있으면 긴급으로 간주 → 결재 제목에 <b class="c-text">[긴급]</b> 자동 추가 + 상신 시 <b class="c-text">긴급 옵션 체크</b></div></div>
+       <div class="c-muted" style="font-size:16px;margin-top:8px;line-height:1.5;">메일에 “긴급” 키워드가 있으면 긴급으로 간주 → 결재 제목에 <b class="c-text">[긴급]</b> 자동 추가 + 상신 시 <b class="c-text">긴급 옵션 체크</b></div></div>
      <div class="card"><div class="bar" style="background:var(--accent)"></div>
        <span style="font-size:20px;font-weight:700;">패킹단위 소진 → 수량 자동</span>
-       <div class="c-muted" style="font-size:15.5px;margin-top:8px;line-height:1.5;">“원료 600kg 소진(6,666세트)” 인식 → 발주수량=생산요청수량=<b class="c-text">6,666</b>으로 자동 계산</div></div>
+       <div class="c-muted" style="font-size:16px;margin-top:8px;line-height:1.5;">“원료 600kg 소진(6,666세트)” 인식 → 발주수량=생산요청수량=<b class="c-text">6,666</b>으로 자동 계산</div></div>
      <div class="card"><div class="bar" style="background:var(--violet)"></div>
        <span style="font-size:20px;font-weight:700;">ERP 비고 자동 압축</span>
-       <div class="c-muted" style="font-size:15.5px;margin-top:8px;line-height:1.5;">원료·자재 특이사항을 <b class="c-text">50자 이내</b>로 압축 (원료코드·중량·사급/소진 보존)</div></div>
+       <div class="c-muted" style="font-size:16px;margin-top:8px;line-height:1.5;">원료·자재 특이사항을 <b class="c-text">50자 이내</b>로 압축 (원료코드·중량·사급/소진 보존)</div></div>
    </div>
  </div>
  <div class="footer"><span>발주서·견적서 → 생산의뢰서 → ERP 자동화</span><span class="mono">07 / 20</span></div>
@@ -412,27 +412,27 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
    <!-- ① 추출 -->
    <div class="card" style="flex:0 0 252px;"><div class="bar" style="background:var(--violet)"></div>
      <div style="font-size:16px;font-weight:700;color:var(--violet);">① 추출</div>
-     <div class="c-muted" style="font-size:12.5px;margin-top:2px;">발주서·견적서·메일</div>
+     <div class="c-muted" style="font-size:12px;margin-top:2px;">발주서·견적서·메일</div>
      <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px;">
-       <div class="node" style="text-align:left;padding:10px 12px;"><b style="font-size:13.5px;">📄 발주서 · 🧾 견적서</b><div class="c-muted mono" style="font-size:11px;margin-top:3px;line-height:1.35;">excel_parser / gemini_extractor + vision_parser</div></div>
-       <div class="node" style="text-align:left;padding:10px 12px;"><b style="font-size:13.5px;">✉️ 메일</b><div class="c-muted mono" style="font-size:11px;margin-top:3px;">mail_scraper → mail_analyzer</div></div>
-       <div class="node" style="text-align:left;padding:10px 12px;background:var(--accentSoft);"><b class="c-accent" style="font-size:12.5px;">cross_validator</b><div class="c-muted" style="font-size:11px;margin-top:3px;line-height:1.35;">견적서 먼저 → PO↔QT 교차검증 → 메일로 확정</div></div>
+       <div class="node" style="text-align:left;padding:10px 12px;"><b style="font-size:13px;">📄 발주서 · 🧾 견적서</b><div class="c-muted mono" style="font-size:11px;margin-top:3px;line-height:1.35;">excel_parser / gemini_extractor + vision_parser</div></div>
+       <div class="node" style="text-align:left;padding:10px 12px;"><b style="font-size:13px;">✉️ 메일</b><div class="c-muted mono" style="font-size:11px;margin-top:3px;">mail_scraper → mail_analyzer</div></div>
+       <div class="node" style="text-align:left;padding:10px 12px;background:var(--accentSoft);"><b class="c-accent" style="font-size:12px;">cross_validator</b><div class="c-muted" style="font-size:11px;margin-top:3px;line-height:1.35;">견적서 먼저 → PO↔QT 교차검증 → 메일로 확정</div></div>
      </div>
-     <div class="c-muted mono" style="font-size:11.5px;margin-top:10px;">→ 제품명·업체명·수량·단가</div>
+     <div class="c-muted mono" style="font-size:11px;margin-top:10px;">→ 제품명·업체명·수량·단가</div>
    </div>
 
    <div style="display:flex;align-items:center;"><span class="arrow">→</span></div>
 
    <!-- ② 매칭 엔진 ×4 -->
    <div class="card" style="flex:1;"><div class="bar" style="background:var(--accent)"></div>
-     <div style="font-size:16px;font-weight:700;color:var(--accent);">② 매칭 엔진 ×4 <span class="c-muted mono" style="font-size:11.5px;font-weight:400;">— main.py · extract() 지휘</span></div>
+     <div style="font-size:16px;font-weight:700;color:var(--accent);">② 매칭 엔진 ×4 <span class="c-muted mono" style="font-size:11px;font-weight:400;">— main.py · extract() 지휘</span></div>
      <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px;">
-       <div class="node" style="text-align:left;padding:11px 13px;"><b style="font-size:13px;">① 제품 매칭</b><div class="c-muted mono" style="font-size:10.5px;margin-top:2px;">product_matcher.py</div><div class="c-muted" style="font-size:11px;margin-top:2px;">↕ erp_products.xlsx → <b class="c-accent">제품코드 5A</b></div></div>
-       <div class="node" style="text-align:left;padding:11px 13px;"><b style="font-size:13px;">② 담당자·부서</b><div class="c-muted mono" style="font-size:10.5px;margin-top:2px;">staff_mapper.lookup()</div><div class="c-muted" style="font-size:11px;margin-top:2px;">↕ 제품생산의뢰서_양식 → <b class="c-violet">부서·담당자</b></div></div>
-       <div class="node" style="text-align:left;padding:11px 13px;"><b style="font-size:13px;">③ 거래처코드</b><div class="c-muted mono" style="font-size:10.5px;margin-top:2px;">lookup_vendor_code → vendor_mapper</div><div class="c-muted" style="font-size:11px;margin-top:2px;">≥0.9 엄격 → <b class="c-amber">거래처코드</b></div></div>
-       <div class="node" style="text-align:left;padding:11px 13px;"><b style="font-size:13px;">④ 외주 판별</b><div class="c-muted mono" style="font-size:10.5px;margin-top:2px;">staff_mapper · 외주제품 탭</div><div class="c-muted" style="font-size:11px;margin-top:2px;">→ <b class="c-amber">외주처·생산구분</b></div></div>
+       <div class="node" style="text-align:left;padding:11px 13px;"><b style="font-size:13px;">① 제품 매칭</b><div class="c-muted mono" style="font-size:10px;margin-top:2px;">product_matcher.py</div><div class="c-muted" style="font-size:11px;margin-top:2px;">↕ erp_products.xlsx → <b class="c-accent">제품코드 5A</b></div></div>
+       <div class="node" style="text-align:left;padding:11px 13px;"><b style="font-size:13px;">② 담당자·부서</b><div class="c-muted mono" style="font-size:10px;margin-top:2px;">staff_mapper.lookup()</div><div class="c-muted" style="font-size:11px;margin-top:2px;">↕ 제품생산의뢰서_양식 → <b class="c-violet">부서·담당자</b></div></div>
+       <div class="node" style="text-align:left;padding:11px 13px;"><b style="font-size:13px;">③ 거래처코드</b><div class="c-muted mono" style="font-size:10px;margin-top:2px;">lookup_vendor_code → vendor_mapper</div><div class="c-muted" style="font-size:11px;margin-top:2px;">≥0.9 엄격 → <b class="c-amber">거래처코드</b></div></div>
+       <div class="node" style="text-align:left;padding:11px 13px;"><b style="font-size:13px;">④ 외주 판별</b><div class="c-muted mono" style="font-size:10px;margin-top:2px;">staff_mapper · 외주제품 탭</div><div class="c-muted" style="font-size:11px;margin-top:2px;">→ <b class="c-amber">외주처·생산구분</b></div></div>
      </div>
-     <div style="margin-top:11px;border-top:1px dashed var(--line);padding-top:9px;font-size:11.5px;line-height:1.6;" class="c-muted">
+     <div style="margin-top:11px;border-top:1px dashed var(--line);padding-top:9px;font-size:11px;line-height:1.6;" class="c-muted">
        <div><b class="c-accent">점수로 판별</b> — 정확일치 <span class="mono">1.0</span> · 포함 <span class="mono">0.7~0.9</span> · 퍼지 → 규격·채널·거래처 보정 → 최고점(<span class="mono">≥0.7</span>) 채택. 담당자는 업체 <span class="mono">≥0.7</span> + 제품 <span class="mono">≥0.5</span>, 거래처코드 <span class="mono">≥0.9</span> 엄격.</div>
        <div style="margin-top:5px;"><b class="c-violet">동일명 다채널</b>(전유통/대리점)은 메일에 포함된 키워드를 감지해 구분 <span class="mono">infer_channel_tag</span>.</div>
      </div>
@@ -443,11 +443,11 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
    <!-- ③ 산출물 ×3 -->
    <div class="card" style="flex:0 0 226px;"><div class="bar" style="background:var(--green)"></div>
      <div style="font-size:16px;font-weight:700;color:var(--green);">③ 산출물 ×3</div>
-     <div class="c-muted" style="font-size:12.5px;margin-top:2px;">한 결과를 세 곳에 재사용</div>
+     <div class="c-muted" style="font-size:12px;margin-top:2px;">한 결과를 세 곳에 재사용</div>
      <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px;">
-       <div class="node" style="text-align:left;padding:10px 12px;"><b style="font-size:13px;">🗂 Sheets DB + 양식</b><div class="c-muted mono" style="font-size:10.5px;margin-top:2px;">sheets.py</div></div>
-       <div class="node" style="text-align:left;padding:10px 12px;"><b style="font-size:13px;">🖥 ERP 수주서</b><div class="c-muted mono" style="font-size:10.5px;margin-top:2px;line-height:1.35;">erp.py · best_match 재조회 → pyautogui</div></div>
-       <div class="node" style="text-align:left;padding:10px 12px;"><b style="font-size:13px;">📝 그룹웨어 기안</b><div class="c-muted mono" style="font-size:10.5px;margin-top:2px;">draft_submitter.py</div></div>
+       <div class="node" style="text-align:left;padding:10px 12px;"><b style="font-size:13px;">🗂 Sheets DB + 양식</b><div class="c-muted mono" style="font-size:10px;margin-top:2px;">sheets.py</div></div>
+       <div class="node" style="text-align:left;padding:10px 12px;"><b style="font-size:13px;">🖥 ERP 수주서</b><div class="c-muted mono" style="font-size:10px;margin-top:2px;line-height:1.35;">erp.py · best_match 재조회 → pyautogui</div></div>
+       <div class="node" style="text-align:left;padding:10px 12px;"><b style="font-size:13px;">📝 그룹웨어 기안</b><div class="c-muted mono" style="font-size:10px;margin-top:2px;">draft_submitter.py</div></div>
      </div>
    </div>
 
@@ -479,7 +479,7 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
    <div class="card" style="padding:16px 24px;"><span class="mono c-accent" style="font-weight:700;">FastAPI :8000</span> <span class="c-muted" style="font-size:15px;">REST API · 작업 오케스트레이션</span></div>
    <div class="card" style="padding:16px 24px;"><span class="mono c-accent" style="font-weight:700;">SQLite Queue</span> <span class="c-muted" style="font-size:15px;">독립 큐 · 포커스 락 · 즉시 retry</span></div>
  </div>
- <div style="text-align:center;margin-top:16px;"><span class="pill" style="background:var(--surface);color:var(--green);font-size:13.5px;"><b>무중단 운영</b> &nbsp;— PC 부팅 시 자동 시작 · 워치독(작업 스케줄러 1분 감시) + 배치 무한 루프로 서버가 죽어도(창 닫기·Ctrl+C 포함) 자동 재시작</span></div>
+ <div style="text-align:center;margin-top:16px;"><span class="pill" style="background:var(--surface);color:var(--green);font-size:13px;"><b>무중단 운영</b> &nbsp;— PC 부팅 시 자동 시작 · 워치독(작업 스케줄러 1분 감시) + 배치 무한 루프로 서버가 죽어도(창 닫기·Ctrl+C 포함) 자동 재시작</span></div>
  <div class="footer"><span>발주서·견적서 → 생산의뢰서 → ERP 자동화</span><span class="mono">13 / 20</span></div>
 </section>
 
@@ -539,7 +539,7 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  <div style="display:flex;gap:18px;margin-top:24px;height:404px;">
    <div class="card" style="flex:1;"><div class="bar" style="background:var(--accent)"></div>
      <div style="font-size:17px;font-weight:700;color:var(--accent);margin-bottom:12px;">네트워크 · 접근 제어</div>
-     <ul class="bullets" style="font-size:15.5px;gap:13px;">
+     <ul class="bullets" style="font-size:16px;gap:13px;">
        <li><b>외부 차단</b> <span class="c-dim" style="font-size:13px;">127.0.0.1 바인딩</span><br>서버가 내 PC 안에서만 동작 — 바깥에선 접속 자체가 안 됨</li>
        <li><b>Host 검증</b> <span class="c-dim" style="font-size:13px;">DNS rebinding 방어</span><br>악성 웹사이트가 내 브라우저를 시켜 로컬 서버를 치는 걸 차단</li>
        <li><b>CSRF 방어</b> <span class="c-dim" style="font-size:13px;">Origin/Referer + 랜덤 토큰</span><br>다른 탭·확장이 내 자동화를 몰래 실행 못 하게 이중 잠금</li>
@@ -548,7 +548,7 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
    </div>
    <div class="card" style="flex:1;"><div class="bar" style="background:var(--amber)"></div>
      <div style="font-size:17px;font-weight:700;color:var(--amber);margin-bottom:12px;">파일 · 시크릿</div>
-     <ul class="bullets" style="font-size:15.5px;gap:13px;">
+     <ul class="bullets" style="font-size:16px;gap:13px;">
        <li><b>파일명 정리</b> <span class="c-dim" style="font-size:13px;">basename</span><br><span class="mono" style="font-size:13px;">../evil.exe</span> 같은 경로 조작으로 폴더를 빠져나가는 걸 차단</li>
        <li><b>업로드 제한</b><br>확장자(.pdf·.xlsx·이미지)와 크기(25MB)만 허용</li>
        <li><b>경로 재확인</b> <span class="c-dim" style="font-size:13px;">realpath</span><br>저장 경로가 업로드 폴더 안인지 한 번 더 검증(이중 안전장치)</li>
@@ -607,7 +607,7 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  </div>
  <div class="card" style="margin-top:20px;padding:20px 26px;">
    <span style="font-size:17px;font-weight:700;color:var(--accent);">기술 스택 &nbsp;</span>
-   <span class="c-muted" style="font-size:15.5px;">Python · FastAPI · Gemini 2.5 Flash · Playwright · pyautogui/pywinauto/Win32 · Google Sheets API · openpyxl · SQLite</span>
+   <span class="c-muted" style="font-size:16px;">Python · FastAPI · Gemini 2.5 Flash · Playwright · pyautogui/pywinauto/Win32 · Google Sheets API · openpyxl · SQLite</span>
  </div>
  <div class="footer"><span>발주서·견적서 → 생산의뢰서 → ERP 자동화</span><span class="mono">19 / 20</span></div>
 </section>
@@ -619,7 +619,7 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  <div style="display:flex;gap:18px;margin-top:30px;height:380px;">
    <div class="card" style="flex:1;">
      <div style="font-size:20px;font-weight:700;color:var(--accent);">회고</div>
-     <ul class="bullets" style="margin-top:18px;font-size:16.5px;gap:14px;">
+     <ul class="bullets" style="margin-top:18px;font-size:17px;gap:14px;">
        <li><b>에러 없음 ≠ 성공</b> — 화면 자동화의 적은 '조용한 실패'(입력이 무시돼도 에러가 안 남). 모든 입력을 다시 읽어 확인 의무화</li>
        <li><b>코드에 적힌 값을 맹신하지 말 것</b> — 유효값은 실제로 넣어보고 다시 읽어 확인하는 테스트로만 확정</li>
        <li><b>AI 추출은 반드시 검증과 함께</b> — AI는 추출, 검증은 규칙</li>
@@ -628,7 +628,7 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
    </div>
    <div class="card" style="flex:0 0 420px;background:var(--accentSoft);"><div class="bar" style="background:var(--accent)"></div>
      <div style="font-size:20px;font-weight:700;color:var(--accent);">다음 단계</div>
-     <div class="c-muted" style="font-size:16.5px;margin-top:16px;line-height:1.6;">ERP·그룹웨어에 <b class="c-text">API가 없어 Playwright·GUI 자동화</b>로 풀었습니다. 추후 <b class="c-text">사내 API가 열리면</b> GUI 조작을 API 호출로 교체해 더 빠르고 안정적으로 만들 여지가 큽니다.</div>
+     <div class="c-muted" style="font-size:17px;margin-top:16px;line-height:1.6;">ERP·그룹웨어에 <b class="c-text">API가 없어 Playwright·GUI 자동화</b>로 풀었습니다. 추후 <b class="c-text">사내 API가 열리면</b> GUI 조작을 API 호출로 교체해 더 빠르고 안정적으로 만들 여지가 큽니다.</div>
    </div>
  </div>
  <div class="footer"><span>발주서·견적서 → 생산의뢰서 → ERP 자동화</span><span class="mono">20 / 20</span></div>
