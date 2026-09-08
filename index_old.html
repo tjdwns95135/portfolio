@@ -85,7 +85,7 @@
 
   /* ---------- bottom band (3 across, not linear) ---------- */
   .bottom{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:16px;align-items:stretch;}
-  .block{padding:24px;display:flex;flex-direction:column;}
+  .block{padding:24px;}
   .block h3{margin:0 0 16px;font-size:15px;font-weight:700;letter-spacing:-.01em;}
   .career .item{padding:16px 0;border-top:1px solid var(--border);}
   .career .item:first-of-type{border-top:none;padding-top:0;}
@@ -95,12 +95,11 @@
   .career .item .detail{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;}
   .career .item .detail li{font-size:12px;line-height:1.5;color:var(--muted);padding-left:13px;position:relative;}
   .career .item .detail li::before{content:"–";position:absolute;left:0;color:var(--faint);}
-  /* 카드가 3열 그리드에서 stretch 되므로, 목록을 남는 높이만큼 균등 분배해
-     자격증 칸이 옆 칸과 같은 높이로 채워지게 한다. 1열로 접히면 자연 높이. */
-  .clist{margin:0;padding:0;list-style:none;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
-  .clist li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px;padding:8px 0;border-top:1px solid var(--border);}
+  /* 카드 박스 높이는 .bottom 의 stretch 로 이미 맞는다.
+     목록은 남는 높이를 강제로 채우지 않고 행 여백만 8px -> 16px 로 키운다. */
+  .clist{margin:0;padding:0;list-style:none;}
+  .clist li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px;padding:16px 0;border-top:1px solid var(--border);}
   .clist li:first-child{border-top:none;padding-top:0;}
-  .clist li:last-child{padding-bottom:0;}
   .clist .yr{color:var(--faint);font-size:12px;}
   .kgrp+.kgrp{margin-top:16px;}
   .kgrp .kl{font-size:12px;color:var(--faint);margin-bottom:8px;}
