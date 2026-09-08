@@ -85,7 +85,7 @@
 
   /* ---------- bottom band (3 across, not linear) ---------- */
   .bottom{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:16px;align-items:stretch;}
-  .block{padding:24px;}
+  .block{padding:24px;display:flex;flex-direction:column;}
   .block h3{margin:0 0 16px;font-size:15px;font-weight:700;letter-spacing:-.01em;}
   .career .item{padding:16px 0;border-top:1px solid var(--border);}
   .career .item:first-of-type{border-top:none;padding-top:0;}
@@ -95,9 +95,12 @@
   .career .item .detail{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;}
   .career .item .detail li{font-size:12px;line-height:1.5;color:var(--muted);padding-left:13px;position:relative;}
   .career .item .detail li::before{content:"–";position:absolute;left:0;color:var(--faint);}
-  .clist{margin:0;padding:0;list-style:none;}
-  .clist li{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:8px 0;border-top:1px solid var(--border);}
+  /* 카드가 3열 그리드에서 stretch 되므로, 목록을 남는 높이만큼 균등 분배해
+     자격증 칸이 옆 칸과 같은 높이로 채워지게 한다. 1열로 접히면 자연 높이. */
+  .clist{margin:0;padding:0;list-style:none;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
+  .clist li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px;padding:8px 0;border-top:1px solid var(--border);}
   .clist li:first-child{border-top:none;padding-top:0;}
+  .clist li:last-child{padding-bottom:0;}
   .clist .yr{color:var(--faint);font-size:12px;}
   .kgrp+.kgrp{margin-top:16px;}
   .kgrp .kl{font-size:12px;color:var(--faint);margin-bottom:8px;}
@@ -207,10 +210,10 @@
     <div class="card block career">
       <h3>경력 · 활동</h3>
       <div class="item">
-        <div class="when num">2026.02 ~ 재직 중</div>
+        <div class="when num">2026.02 ~ 2026.08</div>
         <b>광동헬스바이오 · 영업기획팀 사원</b>
-        <p>영업기획팀에서 영업·유관부서 운영 업무와 프로세스 개선을 담당합니다.</p>
-        <ul class="detail">
+        <p>영업기획팀에서 영업·유관부서 운영 업무와 프로세스 개선을 담당했습니다.</p>
+        <ul class="detail" role="list">
           <li>제품 생산의뢰 · 출하요청서 등록</li>
           <li>영업 및 유관부서 업무 프로세스 개선</li>
           <li>매출 자료 유지 보수 및 디벨롭 (Google Sheets)</li>
@@ -231,7 +234,7 @@
 
     <div class="card block">
       <h3>자격증</h3>
-      <ul class="clist">
+      <ul class="clist" role="list">
         <li><span>빅데이터분석기사</span><span class="yr num">2025.07</span></li>
         <li><span>SQL 개발자 (SQLD)</span><span class="yr num">2024.12</span></li>
         <li><span>데이터분석 준전문가 (ADsP)</span><span class="yr num">2024.06</span></li>
