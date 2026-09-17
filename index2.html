@@ -275,7 +275,7 @@
     var modal=document.getElementById('modal'),
         frame=document.getElementById('modalFrame'),
         closeBtn=document.getElementById('modalClose');
-    function openModal(src){frame.src=src;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+    function openModal(src){frame.src=src+'?v='+Date.now();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
     function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');frame.src='about:blank';document.body.style.overflow='';}
     document.querySelectorAll('.pcard').forEach(function(a){
       a.addEventListener('click',function(e){
