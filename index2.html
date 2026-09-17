@@ -278,7 +278,14 @@
     function openModal(src){frame.src=src;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
     function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');frame.src='about:blank';document.body.style.overflow='';}
     document.querySelectorAll('.pcard').forEach(function(a){
-      a.addEventListener('click',function(e){e.preventDefault();openModal(a.getAttribute('href'));});
+      a.addEventListener('click',function(e){
+        if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0)return;
+        /* 폰에서는 모달을 쓰지 않는다. 상세는 1280px 고정폭 덱이라 좁은 iframe 안에서
+           깨지고, iframe 안에서는 viewport 메타가 무시돼 축소도 안 된다.
+           최상위로 열면 width=1280 이 적용돼 화면에 맞게 줄어든다. */
+        if(window.innerWidth<768)return;
+        e.preventDefault();openModal(a.getAttribute('href'));
+      });
     });
     closeBtn.addEventListener('click',closeModal);
     modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
