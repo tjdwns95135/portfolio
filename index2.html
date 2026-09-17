@@ -160,7 +160,6 @@
     <a class="card pcard" href="projects/sales-meeting.html">
       <div class="kind">영업 미팅·출장 관리</div>
       <h3>영업 미팅 현황 관리</h3>
-      <p class="pl new"><b>판단</b>거래처 현황은 기밀일 수 있어 인증을 먼저 걸어야 했습니다. 회사 구글 계정 로그인으로 접근을 막고 Apps Script로 붙였습니다. 기록이 바로 쌓이고 일비 양식을 엑셀로 그대로 내보낼 수 있다는 점에서, 이 조건에서는 이 방식이 가장 효율적이라고 판단했습니다.</p>
       <p class="pl"><b>기존</b>카톡·화이트보드 이중 보고, 월말 일비 수기 취합</p>
       <p class="pl new"><b>개선</b>구글 계정 모바일 웹앱에서 등록 → 현황·통계·<br>일비 자동 정리</p>
       <div class="result">조회 <span class="num">2~3분</span><span class="to">→</span><span class="hi num">3초</span><span class="sep">·</span>일비 취합 <span class="num">30분</span><span class="to">→</span><span class="hi">즉시</span></div>
@@ -170,7 +169,6 @@
     <a class="card pcard" href="projects/production-order.html">
       <div class="kind">수주 처리 자동화</div>
       <h3>생산의뢰(수주) 자동화</h3>
-      <p class="pl new"><b>판단</b>LLM에 판단까지 맡기면 오히려 실수가 늘어난다고 봤습니다. 환각은 완전히 없앨 수 없고, 실제로 추출 단계에서 사라지지 않았습니다. AI는 추출까지만 맡기고 검증은 규칙에 맡겼습니다. ERP에 넣은 값은 다시 읽어 대조했고, 최종 확인은 사람에게 남겼습니다.</p>
       <p class="pl"><b>기존</b>그룹웨어 생산의뢰서와 ERP 수주서에 같은 내용 이중 입력</p>
       <p class="pl new"><b>개선</b>파일 업로드 → AI가 값을 읽어 기안·ERP 입력까지 자동, 재확인으로 오류 제거</p>
       <div class="result">건당 <span class="num">8~10분</span><span class="to">→</span><span class="hi num">2분 30초</span><span class="sep">·</span>입력 실수 <span class="hi num">0건</span></div>
@@ -180,7 +178,6 @@
     <a class="card pcard" href="projects/purchase.html">
       <div class="kind">원료 구매·발주</div>
       <h3>원료 구매·발주 자동화</h3>
-      <p class="pl new"><b>판단</b>제품명 하나로 배합비와 원료가 한 번에 따라오게 하려면 네 곳을 합치는 수밖에 없었습니다. ERP는 API를 지원하지 않아 화면 제어로 조회해 엑셀로 내보낸 뒤 DB에 적재했습니다. 주어진 조건에서 할 수 있는 최선이라고 판단했습니다.</p>
       <p class="pl"><b>기존</b>배합비·소요량·재고 비교를 전부 손으로 엑셀 계산</p>
       <p class="pl new"><b>개선</b>데이터 자동 수집 → 하나의 DB에서 소요량·<br>부족분·단가 함께 확인</p>
       <div class="result">건당 <span class="num">3분</span><span class="to">→</span><span class="hi num">1분 15초</span><span class="sep">·</span>자료 <span class="num">4곳</span><span class="to">→</span><span class="hi">하나로 통합</span></div>
