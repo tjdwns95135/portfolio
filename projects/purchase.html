@@ -23,12 +23,13 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
   body{margin:0;background:var(--page);color:var(--text);
     font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
     -webkit-font-smoothing:antialiased;}
-  .bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;
+  .bar{position:sticky;top:0;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
     gap:16px;padding:14px 22px;background:#FFFFFFEE;backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);}
   .bar .back{color:var(--accent);text-decoration:none;font-size:14px;font-weight:600;}
   .bar .back:hover{color:var(--accentInk);}
-  .bar .ttl{font-size:14px;font-weight:700;color:var(--muted);}
+  .bar .ttl{grid-column:2;text-align:center;font-size:13px;color:var(--muted);}
+.bar .ttl b{color:var(--text);font-weight:700;}
   .wrap{max-width:1040px;margin:0 auto;padding:34px 22px 80px;}
   .lead{margin:0 0 32px;padding:22px 24px;background:var(--surface);border:1px solid var(--line);border-radius:14px;}
   .lead h1{margin:0 0 8px;font-size:26px;font-weight:700;letter-spacing:-.03em;}
@@ -50,8 +51,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 <body>
   <div class="bar">
     <a class="back" href="../index.html">← 포트폴리오로</a>
-    <span class="ttl">원료 구매·발주 자동화 · SMART SCM</span>
-    <span></span>
+    <span class="ttl"><b>원료 구매·발주 자동화</b></span>
   </div>
 
   <div class="wrap">
