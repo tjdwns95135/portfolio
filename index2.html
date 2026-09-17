@@ -120,10 +120,12 @@
     border:1px solid var(--border);border-radius:16px;overflow:hidden;
     box-shadow:0 40px 100px -24px rgba(0,0,0,.65);}
   .modal-box iframe{width:100%;height:100%;border:0;display:block;background:#fff;}
-  .modal-close{position:absolute;top:12px;right:14px;z-index:2;width:40px;height:40px;border-radius:50%;
-    background:rgba(15,20,30,.82);color:#fff;border:1px solid rgba(255,255,255,.15);font-size:19px;
+  /* 원형 배경 없이 X 만. 상세 페이지가 밝은 배경이라 글자색은 어둡게.
+     오른쪽 여백은 iframe 스크롤바를 피하도록 넉넉히 준다. */
+  .modal-close{position:absolute;top:4px;right:30px;z-index:2;width:34px;height:34px;
+    background:none;color:var(--muted);border:0;font-size:22px;
     cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;}
-  .modal-close:hover{background:rgba(15,20,30,1);}
+  .modal-close:hover{color:var(--ink);}
 
   @media (max-width:1080px){
     .hero{grid-template-columns:1fr;}
