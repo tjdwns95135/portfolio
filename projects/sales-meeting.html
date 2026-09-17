@@ -36,15 +36,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 .stat-label{margin-top:8px;font-size:13px;font-weight:500;letter-spacing:.08em;color:var(--dim);}
 .bignum{line-height:1.1;}
 .deck{display:flex;flex-direction:column;align-items:center;gap:24px;padding:74px 16px 56px;}
-.fold{width:1280px;flex:0 0 auto;}
-.fold>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
- padding:16px 22px;background:var(--surface);border:1px solid var(--line);border-radius:12px;
- color:var(--muted);font-size:16px;}
-.fold>summary::-webkit-details-marker{display:none;}
-.fold>summary::before{content:"▸";color:var(--accent);font-size:13px;}
-.fold[open]>summary::before{content:"▾";}
-.fold>summary:hover{color:var(--text);border-color:var(--accent);}
-.fold[open]>summary{margin-bottom:24px;}
 .slide{width:1280px;height:720px;background:var(--bg);position:relative;overflow:hidden;
  border-radius:14px;box-shadow:var(--shadow);padding:50px 64px;flex:0 0 auto;}
 .kicker{font-size:15px;color:var(--accent);letter-spacing:1.5px;font-weight:500;}
@@ -80,9 +71,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 .c-amber{color:var(--amber);} .c-red{color:var(--red);} .c-muted{color:var(--muted);}
 .c-dim{color:var(--dim);} .c-text{color:var(--text);}
 @media print{
- .fold>summary{display:none;}
- .fold>*{display:block!important;}
- .fold::details-content{content-visibility:visible!important;}
  @page{size:1280px 720px;margin:0;}
  html,body{background:#fff;}
  .toolbar{display:none;}
@@ -337,8 +325,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 </section>
 
 <!-- ============ 10. ARCHITECTURE ============ -->
-<details class="fold">
- <summary>08 · 아키텍처 — 서버 0대로 완결</summary>
 <section class="slide">
  <div class="kicker mono">08 · 아키텍처</div>
  <h2 class="title sm">아키텍처 — 서버 0대로 완결</h2>
@@ -349,11 +335,8 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  <div style="text-align:center;color:var(--dim);font-size:16px;margin-top:54px;">모든 처리는 <b class="c-text">PC 1대 + Google 인프라</b>에서 완결 — 별도 서버·DB·호스팅 0</div>
  <div class="footer"><span>영업 미팅 현황 관리 시스템</span><span class="mono">10 / 15</span></div>
 </section>
-</details>
 
 <!-- ============ 11. DATA SECURITY ============ -->
-<details class="fold">
- <summary>09 · 보안 ① — 원본을 건드리지 않는 단방향 읽기</summary>
 <section class="slide">
  <div class="kicker mono">09 · 보안 ①</div>
  <h2 class="title sm">데이터 보안 — 원본을 건드리지 않는 단방향 읽기</h2>
@@ -372,11 +355,8 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  </div>
  <div class="footer"><span>영업 미팅 현황 관리 시스템</span><span class="mono">11 / 15</span></div>
 </section>
-</details>
 
 <!-- ============ 12. ACCESS CONTROL ============ -->
-<details class="fold">
- <summary>10 · 보안 ② — 접근 제어: 등록된 이메일만, 모든 행위 로그</summary>
 <section class="slide">
  <div class="kicker mono">10 · 보안 ②</div>
  <h2 class="title sm">접근 제어 — 등록된 이메일만, 모든 행위 로그</h2>
@@ -401,7 +381,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  </div>
  <div class="footer"><span>영업 미팅 현황 관리 시스템</span><span class="mono">12 / 15</span></div>
 </section>
-</details>
 
 <!-- ============ 13. RESULTS / KPI ============ -->
 <section class="slide">
@@ -470,16 +449,5 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 </section>
 
 </div>
-<script>
-(function(){
-  function setAll(open){document.querySelectorAll('details.fold').forEach(function(d){
-    if(open){if(!d.hasAttribute('data-wasopen'))d.setAttribute('data-wasopen',d.open?'1':'0');d.open=true;}
-    else{d.open=d.getAttribute('data-wasopen')==='1';d.removeAttribute('data-wasopen');}});}
-  window.addEventListener('beforeprint',function(){setAll(true);});
-  window.addEventListener('afterprint',function(){setAll(false);});
-  if(window.matchMedia){var mq=window.matchMedia('print');
-    if(mq.addEventListener)mq.addEventListener('change',function(e){setAll(e.matches);});}
-})();
-</script>
 </body>
 </html>

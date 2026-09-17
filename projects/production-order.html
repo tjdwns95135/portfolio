@@ -36,15 +36,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 .stat-label{margin-top:8px;font-size:13px;font-weight:500;letter-spacing:.08em;color:var(--dim);}
 .bignum{line-height:1.1;}
 .deck{display:flex;flex-direction:column;align-items:center;gap:24px;padding:74px 16px 56px;}
-.fold{width:1280px;flex:0 0 auto;}
-.fold>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
- padding:16px 22px;background:var(--surface);border:1px solid var(--line);border-radius:12px;
- color:var(--muted);font-size:16px;}
-.fold>summary::-webkit-details-marker{display:none;}
-.fold>summary::before{content:"▸";color:var(--accent);font-size:13px;}
-.fold[open]>summary::before{content:"▾";}
-.fold>summary:hover{color:var(--text);border-color:var(--accent);}
-.fold[open]>summary{margin-bottom:24px;}
 .slide{width:1280px;height:720px;background:var(--bg);position:relative;overflow:hidden;
  border-radius:14px;box-shadow:var(--shadow);padding:50px 64px;flex:0 0 auto;}
 .kicker{font-size:15px;color:var(--accent);letter-spacing:1.5px;font-weight:500;}
@@ -81,9 +72,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 .c-green{color:var(--green);} .c-red{color:var(--red);} .c-muted{color:var(--muted);}
 .c-dim{color:var(--dim);} .c-text{color:var(--text);}
 @media print{
- .fold>summary{display:none;}
- .fold>*{display:block!important;}
- .fold::details-content{content-visibility:visible!important;}
  @page{size:1280px 720px;margin:0;}
  html,body{background:#fff;}
  .toolbar{display:none;}
@@ -259,8 +247,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 </section>
 
 <!-- ============ 6. FEATURE: REMARK ROUTING (HERO) ============ -->
-<details class="fold">
- <summary>기능 ① 상세 — 메일 특이사항 자동 분류 · 제형 추출·정규화 · 2장</summary>
 <section class="slide">
  <div class="kicker mono">03 · 기능 ① 상세 — 특이사항 분류</div>
  <h2 class="title sm">메일 특이사항 자동 분류 — 한 번 읽고 4곳에 분배</h2>
@@ -321,7 +307,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  </div>
  <div class="footer"><span>발주서·견적서 → 생산의뢰서 → ERP 자동화</span><span class="mono">08 / 20</span></div>
 </section>
-</details>
 
 <!-- ============ 8. FEATURE: GROUPWARE ============ -->
 <section class="slide">
@@ -411,8 +396,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 </section>
 
 <!-- ============ 데이터 흐름: 매칭 파이프라인 ============ -->
-<details class="fold">
- <summary>데이터 흐름 — 파일이 어떻게 엮이나: 추출부터 매칭·산출까지</summary>
 <section class="slide">
  <div class="kicker mono">데이터 흐름</div>
  <h2 class="title sm">파일이 어떻게 엮이나 — 추출부터 매칭·산출까지</h2>
@@ -464,7 +447,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  </div>
  <div class="footer"><span>발주서·견적서 → 생산의뢰서 → ERP 자동화</span><span class="mono">12 / 20</span></div>
 </section>
-</details>
 
 <!-- ============ 11. ARCHITECTURE ============ -->
 <section class="slide">
@@ -540,8 +522,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 </section>
 
 <!-- ============ 14. SECURITY ============ -->
-<details class="fold">
- <summary>09 · 보안 설계 — 관리자 권한 로컬 서버, “localhost니까 안전”에 안주하지 않음</summary>
 <section class="slide">
  <div class="kicker mono">09 · 보안 설계</div>
  <h2 class="title sm">관리자 권한 로컬 서버, “localhost니까 안전”에 안주하지 않음</h2>
@@ -568,11 +548,8 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  </div>
  <div class="footer"><span>발주서·견적서 → 생산의뢰서 → ERP 자동화</span><span class="mono">17 / 20</span></div>
 </section>
-</details>
 
 <!-- ============ OPTIMIZATION ============ -->
-<details class="fold">
- <summary>10 · 최적화 — 성능·효율 최적화</summary>
 <section class="slide">
  <div class="kicker mono">10 · 최적화</div>
  <h2 class="title sm">성능·효율 최적화</h2>
@@ -593,7 +570,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
  </div>
  <div class="footer"><span>발주서·견적서 → 생산의뢰서 → ERP 자동화</span><span class="mono">18 / 20</span></div>
 </section>
-</details>
 
 <!-- ============ RESULTS + STACK ============ -->
 <section class="slide">
@@ -652,17 +628,6 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
     else{v.pause();}
   });},{threshold:0.4});
   document.querySelectorAll('video').forEach(function(v){io.observe(v);});
-})();
-</script>
-<script>
-(function(){
-  function setAll(open){document.querySelectorAll('details.fold').forEach(function(d){
-    if(open){if(!d.hasAttribute('data-wasopen'))d.setAttribute('data-wasopen',d.open?'1':'0');d.open=true;}
-    else{d.open=d.getAttribute('data-wasopen')==='1';d.removeAttribute('data-wasopen');}});}
-  window.addEventListener('beforeprint',function(){setAll(true);});
-  window.addEventListener('afterprint',function(){setAll(false);});
-  if(window.matchMedia){var mq=window.matchMedia('print');
-    if(mq.addEventListener)mq.addEventListener('change',function(e){setAll(e.matches);});}
 })();
 </script>
 </body>
