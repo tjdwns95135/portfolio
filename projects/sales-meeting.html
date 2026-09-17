@@ -453,5 +453,18 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
 </section>
 
 </div>
+<script>
+(function(){
+  var back=document.querySelector('.toolbar .back')||document.querySelector('.bar .back');
+  if(!back)return;
+  /* 모달 iframe 안이면 닫기(X) 버튼이 따로 있으므로 이 링크는 숨긴다 */
+  if(window.top!==window.self){back.style.display='none';return;}
+  back.addEventListener('click',function(e){
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0)return;
+    /* 이력이 있으면 왔던 곳으로. 새 탭으로 바로 열었으면 href 그대로 포폴로 */
+    if(history.length>1){e.preventDefault();history.back();}
+  });
+})();
+</script>
 </body>
 </html>
