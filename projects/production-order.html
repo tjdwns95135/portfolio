@@ -112,6 +112,10 @@ body{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:var(--text);
     <p style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">메일, 발주서, 견적서를 올리면 AI가 필요한 값을 읽어내고, 그룹웨어 기안과 ERP 입력까지 자동으로 처리합니다. 입력한 값을 다시 읽어 확인해 오류를 없앴습니다.</p>
    </div>
    <div style="display:flex;gap:16px;align-items:flex-start;">
+    <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:var(--dim);background:var(--surfaceHi);border:1px solid var(--line);border-radius:8px;padding:6px 8px;">판단</span>
+    <p style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">LLM에 판단까지 맡기면 오히려 실수가 늘어난다고 봤습니다. 환각은 완전히 없앨 수 없고, 실제로 추출 단계에서 사라지지 않았습니다. AI는 추출까지만 맡기고 검증은 규칙에 맡겼습니다. ERP에 넣은 값은 다시 읽어 대조했고, 최종 확인은 사람에게 남겼습니다.</p>
+   </div>
+   <div style="display:flex;gap:16px;align-items:flex-start;">
     <span style="flex:0 0 auto;min-width:82px;white-space:nowrap;text-align:center;font-size:12px;font-weight:700;color:var(--green);background:var(--greenSoft);border:1px solid var(--greenSoft);border-radius:8px;padding:6px 8px;">결과</span>
     <p style="margin:0;font-size:16px;line-height:1.65;color:var(--text);font-weight:600;">건당 8~10분 → 2분 30초 · 입력 실수 주 1~2건 → 0건</p>
    </div>
