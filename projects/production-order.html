@@ -150,6 +150,12 @@ a{color:inherit;text-decoration:none}
 
 .curtain{position:fixed;inset:0;z-index:90;background:var(--ink);transform:scaleY(0);transform-origin:bottom;pointer-events:none}
 
+@media (max-width:760px){
+  .nav{transform:none!important;opacity:1!important}
+  .ln{display:inline}
+  br{display:none}
+}
+
 @media (prefers-reduced-motion:reduce){
   .anim-ready [data-split] .wm > span,.anim-ready [data-fade]{transform:none!important;opacity:1!important;filter:none!important;transition:none!important}
 }
@@ -159,8 +165,8 @@ a{color:inherit;text-decoration:none}
 <div class="curtain" id="curtain" aria-hidden="true"></div>
 
 <nav class="nav">
-  <a class="mark" href="../index.html" data-trans>최성준</a>
-  <a class="back" href="../index.html#works" data-trans><i></i> 목록으로</a>
+  <a class="mark" href="../" data-trans>최성준</a>
+  <a class="back" href="../#works" data-trans><i></i> 목록으로</a>
 </nav>
 
 <header class="hero">
@@ -441,7 +447,7 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <div class="row">
       <a class="big" href="sales-meeting.html" data-trans data-split>다음 - 영업 미팅 현황 관리</a>
-      <a class="c" href="../index.html#works" data-trans>목록으로</a>
+      <a class="c" href="../#works" data-trans>목록으로</a>
     </div>
   </div>
 </footer>
@@ -527,15 +533,17 @@ a{color:inherit;text-decoration:none}
       document.querySelectorAll('[data-cascade]').forEach(function(c){io.observe(c);});
       document.querySelectorAll(SEL).forEach(function(el){ if(!el.closest('[data-cascade]')) io.observe(el); });
 
-      var nav=document.querySelector('.nav'),last=0;
-      addEventListener('scroll',function(){
-        var y=scrollY;
-        if(y>140&&y>last+2) nav.classList.add('tuck');
-        else if(y<last-2||y<=140) nav.classList.remove('tuck');
-        last=y;
-      },{passive:true});
+      if (window.innerWidth > 760) {
+        var nav=document.querySelector('.nav'),last=0;
+        addEventListener('scroll',function(){
+          var y=scrollY;
+          if(y>140&&y>last+2) nav.classList.add('tuck');
+          else if(y<last-2||y<=140) nav.classList.remove('tuck');
+          last=y;
+        },{passive:true});
+      }
 
-      if(window.Lenis){
+      if(window.Lenis && window.innerWidth > 760){
         var l=new Lenis({duration:1.15,touchMultiplier:1.6,
           easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));}});
         function raf(t){l.raf(t);requestAnimationFrame(raf);} requestAnimationFrame(raf);
