@@ -12,6 +12,10 @@ if ('scrollRestoration' in history){
   var __nav = performance.getEntriesByType('navigation')[0];
   history.scrollRestoration = (__nav && __nav.type === 'back_forward') ? 'auto' : 'manual';
 }
+/* 해시는 여기서 바로 기억하고 주소에서 지운다. 스크롤은 나중에 이 값으로 한다 -
+   CDN 로딩을 기다리면 주소창에 #works 가 1초 가까이 남는다 */
+window.__hash = location.hash;
+if (window.__hash) history.replaceState(null, '', location.pathname + location.search);
 setTimeout(function(){
   document.querySelectorAll('[data-split]:not([data-wm])').forEach(function(el){ el.dataset.wm = '1'; });
 }, 3500);
@@ -642,17 +646,17 @@ a{color:inherit;text-decoration:none;}
     }
 
     function checkHash(){
-      var hash = location.hash;
+      var hash = window.__hash || location.hash;
+      window.__hash = '';
       if (hash === '#projects') hash = '#works';
       if (hash){
+        /* 앵커로 들어온 경우(#contact 등)도 주소를 바로 정리한다 */
+        if (location.hash) history.replaceState(null, '', location.pathname + location.search);
         var target = document.querySelector(hash);
         if (target){
           setTimeout(function(){
             if (window.__lenis) window.__lenis.scrollTo(target, { immediate: true });
             else target.scrollIntoView();
-            /* 주소에서 해시를 지운다. 프로젝트에서 돌아올 때만 이동하고,
-               그 뒤 새로고침하면 맨 위로 가게 한다 */
-            history.replaceState(null, '', location.pathname + location.search);
           }, 80);
         }
       }
