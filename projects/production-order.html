@@ -160,7 +160,7 @@ a{color:inherit;text-decoration:none}
 
 <nav class="nav">
   <a class="mark" href="../index.html" data-trans>최성준</a>
-  <a class="back" href="../index.html" data-trans><i></i> 목록으로</a>
+  <a class="back" href="../index.html#works" data-trans><i></i> 목록으로</a>
 </nav>
 
 <header class="hero">
@@ -441,7 +441,7 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <div class="row">
       <a class="big" href="sales-meeting.html" data-trans data-split>다음 - 영업 미팅 현황 관리</a>
-      <a class="c" href="../index.html" data-trans>목록으로</a>
+      <a class="c" href="../index.html#works" data-trans>목록으로</a>
     </div>
   </div>
 </footer>
@@ -449,6 +449,14 @@ a{color:inherit;text-decoration:none}
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js" defer></script>
 <script>
 (function(){
+  window.addEventListener('pageshow', function(){
+    var curtain = document.getElementById('curtain');
+    if (curtain){
+      curtain.style.transition = 'none';
+      curtain.style.transform = 'scaleY(0)';
+    }
+  });
+
   var booted=false;
   function boot(){
     if(booted) return; booted=true;

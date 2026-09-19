@@ -110,7 +110,7 @@ video{width:100%;border-radius:8px;background:#000;display:block;border:1px soli
 
 <nav class="nav">
   <a class="mark" href="../index.html" data-trans>최성준</a>
-  <a class="back" href="../index.html" data-trans><i></i> 목록으로</a>
+  <a class="back" href="../index.html#works" data-trans><i></i> 목록으로</a>
 </nav>
 
 <header class="hero">
@@ -183,7 +183,8 @@ video{width:100%;border-radius:8px;background:#000;display:block;border:1px soli
 <footer class="foot">
   <div class="wrap">
     <div class="row">
-      <a class="c" href="../index.html" data-trans>목록으로</a>
+      <span class="c">최성준 · 포트폴리오</span>
+      <a class="big" href="../index.html#works" data-trans><span>목록으로</span><i></i></a>
     </div>
   </div>
 </footer>
@@ -202,6 +203,14 @@ video{width:100%;border-radius:8px;background:#000;display:block;border:1px soli
 </script>
 <script>
 (function(){
+  window.addEventListener('pageshow', function(){
+    var curtain = document.getElementById('curtain');
+    if (curtain){
+      curtain.style.transition = 'none';
+      curtain.style.transform = 'scaleY(0)';
+    }
+  });
+
   var booted=false;
   function boot(){
     if(booted) return; booted=true;
