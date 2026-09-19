@@ -62,3 +62,20 @@ handoff.md
 .DS_Store
 Thumbs.db
 *.log
+
+# ===== 2026-09 추가: 개인 서류·작업 산출물 (public 저장소 공개 금지) =====
+*입사지원서*
+경력기술서*
+*경력기술서*
+*_지원_마스터*
+*_extracted.txt
+페스카로*
+Claude outputs/
+_workspace/
+
+# ===== 레퍼런스 사이트 반영본 (외부 사이트 구조 복제본 - 공개 금지) =====
+index-ref.html
+
+# ===== 새 사이트에서 쓰지 않는 잔여 자산 =====
+assets/thumbs/
+assets/profile-hero.webp
