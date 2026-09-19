@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* 첫 페인트부터 숨김 상태로 시작한다. 제목이 떴다가 사라지고 다시 올라오는 걸 없앤다.
+   3.5초 안에 단어 분해가 안 되면(스크립트 오류 등) 제목을 그냥 보여준다. */
+document.documentElement.classList.add('anim-ready');
+setTimeout(function(){
+  document.querySelectorAll('[data-split]:not([data-wm])').forEach(function(el){ el.dataset.wm = '1'; });
+}, 3500);
+</script>
 <title>최성준 - 업무 자동화 · 프로세스 개선</title>
 <meta name="description" content="현업에서 병목을 찾아 직접 자동화합니다. 영업기획팀에서 설계·구현한 업무 자동화 프로젝트 3건.">
 <meta property="og:title" content="최성준 - 업무 자동화 · 프로세스 개선">
@@ -96,6 +104,9 @@ a{color:inherit;text-decoration:none;}
   transition-delay:var(--d,0s);
 }
 .anim-ready [data-clip].in{clip-path:inset(0 0 0% 0);}
+
+/* 단어 분해 전까지는 숨겨둔다 - 분해되는 순간 .wm 마스크가 이어받는다 */
+.anim-ready [data-split]:not([data-wm]){opacity:0;}
 
 /* ============================================================
    nav
@@ -281,7 +292,8 @@ a{color:inherit;text-decoration:none;}
 @media (prefers-reduced-motion:reduce){
   .anim-ready [data-split] .wm > span,
   .anim-ready [data-fade],
-  .anim-ready [data-clip]{transform:none!important;opacity:1!important;clip-path:none!important;filter:none!important;transition:none!important;}
+  .anim-ready [data-clip],
+  .anim-ready [data-split]:not([data-wm]){transform:none!important;opacity:1!important;clip-path:none!important;filter:none!important;transition:none!important;}
 }
 </style>
 </head>
@@ -614,7 +626,9 @@ a{color:inherit;text-decoration:none;}
         }, { passive:true });
       }
 
-      motion();
+      /* GSAP·Lenis 는 defer 라 이 시점엔 아직 없다. 준비되면 얹는다 */
+      if (window.gsap) motion();
+      else addEventListener('DOMContentLoaded', motion);
     }
 
     function checkHash(){
@@ -686,12 +700,11 @@ a{color:inherit;text-decoration:none;}
       ScrollTrigger.refresh();
     }
 
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(start).catch(start);
-    else start();
+    /* 폰트를 기다리지 않는다. 마스크는 단어 박스를 따라가므로 나중에 폰트가 바뀌어도 모션은 그대로다 */
+    start();
   }
 
-  addEventListener('load', boot);
-  setTimeout(boot, 3000);   /* CDN 이 늦거나 막혀도 내용은 뜬다 */
+  boot();   /* 스크립트가 body 끝에 있다 - 이미지·영상 로딩을 기다리지 않는다 */
 })();
 </script>
 </body>

@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* 첫 페인트부터 숨김 상태로 시작한다. 제목이 떴다가 사라지고 다시 올라오는 걸 없앤다.
+   3.5초 안에 단어 분해가 안 되면(스크립트 오류 등) 제목을 그냥 보여준다. */
+document.documentElement.classList.add('anim-ready');
+setTimeout(function(){
+  document.querySelectorAll('[data-split]:not([data-wm])').forEach(function(el){ el.dataset.wm = '1'; });
+}, 3500);
+</script>
 <title>생산의뢰(수주) 자동화 - 최성준</title>
 <meta name="description" content="그룹웨어와 ERP에 이중 입력하던 수주 처리를 파일 업로드 한 번으로. 건당 8~10분 → 2분 30초, 입력 실수 0건.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,6 +51,8 @@ a{color:inherit;text-decoration:none}
 .anim-ready [data-fade]{opacity:0;transform:translateY(30px);
   transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
 .anim-ready [data-fade].in{opacity:1;transform:none}
+/* 단어 분해 전까지는 숨겨둔다 - 분해되는 순간 .wm 마스크가 이어받는다 */
+.anim-ready [data-split]:not([data-wm]){opacity:0}
 
 /* nav */
 .nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;
@@ -71,6 +81,7 @@ a{color:inherit;text-decoration:none}
   color:var(--on-dark-mute);line-height:1.7}
 .meta{margin-top:clamp(30px,5vh,52px);display:flex;flex-wrap:wrap;justify-content:center;gap:12px 42px;
   padding-top:22px;border-top:1px solid var(--line-dark);font-size:14px;color:var(--on-dark-mute)}
+.meta > span{display:inline-flex;align-items:baseline;gap:10px}   /* 라벨과 값이 붙어 읽히지 않게 */
 .meta b{color:var(--on-dark);font-weight:600}
 
 /* key visual */
@@ -157,7 +168,8 @@ a{color:inherit;text-decoration:none}
 }
 
 @media (prefers-reduced-motion:reduce){
-  .anim-ready [data-split] .wm > span,.anim-ready [data-fade]{transform:none!important;opacity:1!important;filter:none!important;transition:none!important}
+  .anim-ready [data-split] .wm > span,.anim-ready [data-fade],
+  .anim-ready [data-split]:not([data-wm]){transform:none!important;opacity:1!important;filter:none!important;transition:none!important}
 }
 </style>
 </head>
@@ -549,9 +561,10 @@ a{color:inherit;text-decoration:none}
         function raf(t){l.raf(t);requestAnimationFrame(raf);} requestAnimationFrame(raf);
       }
     }
-    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(start).catch(start); else start();
+    /* 폰트를 기다리지 않는다. 마스크는 단어 박스를 따라가므로 나중에 폰트가 바뀌어도 모션은 그대로다 */
+    start();
   }
-  addEventListener('load',boot); setTimeout(boot,3000);
+  boot();   /* 스크립트가 body 끝에 있다 - 이미지·영상 로딩을 기다리지 않는다 */
 })();
 </script>
 </body>
