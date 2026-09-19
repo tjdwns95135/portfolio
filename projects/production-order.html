@@ -34,7 +34,7 @@ setTimeout(function(){
 html{background:var(--ink);-webkit-text-size-adjust:100%}
 body{margin:0;font-family:var(--sans);background:var(--paper);color:var(--on-paper);
   line-height:1.6;letter-spacing:-.012em;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
-img,video{display:block;max-width:100%}
+img,video{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid currentColor;outline-offset:4px;border-radius:2px}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
@@ -162,7 +162,6 @@ a{color:inherit;text-decoration:none}
 .curtain{position:fixed;inset:0;z-index:90;background:var(--ink);transform:scaleY(0);transform-origin:bottom;pointer-events:none}
 
 @media (max-width:760px){
-  .nav{transform:none!important;opacity:1!important}
   .ln{display:inline}
   br{display:none}
 }
@@ -229,7 +228,7 @@ a{color:inherit;text-decoration:none}
 
 <section class="sect paper">
   <div class="wrap">
-    <div class="dhead"><span class="n">02</span><h2 data-split>파일 업로드 한 번 → 추출·기안·ERP까지</h2><p data-fade>FastAPI 서버가 작업을 큐에 적재하고 워커가 그룹웨어 기안·ERP 입력·파일 정리를<br>병렬로 동시에 처리합니다.</p></div>
+    <div class="dhead"><span class="n">02</span><h2 data-split>파일 업로드 한 번 → 추출·기안·ERP까지</h2><p data-fade>FastAPI 서버가 작업을 큐에 적재하고 워커가 그룹웨어 기안·ERP 입력·파일 정리를 <br>병렬로 동시에 처리합니다.</p></div>
     <div class="flow" data-cascade>
       <div class="node" data-fade><b>발주서·견적서·메일</b><span>PDF · Excel · PNG</span></div>
       <div class="node hi" data-fade><b>AI 추출·검증</b><span>Gemini 2.5 Flash</span></div>
@@ -251,7 +250,7 @@ a{color:inherit;text-decoration:none}
     <div class="dhead"><span class="n"></span><h2 data-split>코드는 AI도 짠다 - 차이는 무엇을 의심하고 검증했는가</h2><p data-fade>대부분을 AI 보조로 빠르게 구현했기에 실제로 공을 들인 곳은 자동화가 조용히 틀리지 않게 만드는 판단이었습니다.</p></div>
     <div class="items" data-cascade>
 <div class="item" data-fade><div class="k">01</div><h3>검증을 의무화</h3><p>에러 없음은 성공이 아닙니다. ERP 입력은 readback, AI 추출은 정규식으로 매번 재확인합니다.</p></div>
-<div class="item" data-fade><div class="k">02</div><h3>맥락으로 구분</h3><p>같은 제형 라벨도 어느 표에 속하냐로 판별합니다.<br>사후 필터가 아니라 소스 단계에서 차단합니다.</p></div>
+<div class="item" data-fade><div class="k">02</div><h3>맥락으로 구분</h3><p>같은 제형 라벨도 어느 표에 속하냐로 판별합니다. <br>사후 필터가 아니라 소스 단계에서 차단합니다.</p></div>
 <div class="item" data-fade><div class="k">03</div><h3>AI를 의심</h3><p>환각과 오독을 전제로 설계했습니다. AI는 추출 도구이고 최종 판단은 규칙 기반 로직이 합니다.</p></div>
 <div class="item" data-fade><div class="k">04</div><h3>보안을 기본값으로</h3><p>관리자 권한 로컬 서버를 localhost니까 안전으로 두지 않고 다층으로 방어했습니다.</p></div>
 <div class="item" data-fade><div class="k">05</div><h3>사람을 루프에</h3><p>추출 결과 확인 단계를 의도적으로 남겨 오류 폭주를 막았습니다. 완전 자동화를 욕심내지 않았습니다.</p></div>
@@ -262,7 +261,7 @@ a{color:inherit;text-decoration:none}
 
 <section class="sect paper">
   <div class="wrap">
-    <div class="dhead"><span class="n">03</span><h2 data-split>데이터 추출 - 발주서·견적서에 메일까지</h2><p data-fade>파일에서 핵심 데이터를 뽑고 관련 메일을 직접 찾아 특이사항 단서까지 모읍니다.<br>추출은 AI가, 검증은 규칙이 합니다.</p></div>
+    <div class="dhead"><span class="n">03</span><h2 data-split>데이터 추출 - 발주서·견적서에 메일까지</h2><p data-fade>파일에서 핵심 데이터를 뽑고 관련 메일을 직접 찾아 특이사항 단서까지 모읍니다. <br>추출은 AI가, 검증은 규칙이 합니다.</p></div>
     <div class="callgrid" data-cascade>
       <div class="call" data-fade><div class="lab">발주서·견적서 추출 · GEMINI</div><h4>구조화 추출</h4>
         <p>업체명·제품명·수량·단가·납기일을 구조화해 뽑습니다. 텍스트를 먼저 읽고 글자가 분리되면 Vision OCR로 넘어가는 이중 추출을 씁니다. 수율을 반영해 생산요청수량을 자동 계산하고 제품명은 ERP 정식 품목명칭으로 자동 교체합니다.</p></div>
@@ -270,14 +269,14 @@ a{color:inherit;text-decoration:none}
         <p>그룹웨어 제품생산의뢰 메일함을 스크래핑해 해당 건의 메일을 자동으로 찾습니다. 제품명 부분·순서 매칭으로 내부 명칭 차이도 흡수하고, 답장·전달 체인에서는 최상단 발신자 본문만 분석합니다.</p></div>
     </div>
     <div class="">
-<div class="call" data-fade><div class="lab">AI 지어내기 방지</div><h4>네 겹으로 교차 확인</h4><p>텍스트와 Vision 이중 추출 결과를 비교하고, 정규식 패턴으로 교차검증하고, 포장규격 기반 추론과 대조하고, mm 치수 같은 생성값은 제거합니다.<br>AI는 추출이고 최종 검증은 규칙이 담당합니다.</p></div>
+<div class="call" data-fade><div class="lab">AI 지어내기 방지</div><h4>네 겹으로 교차 확인</h4><p>텍스트와 Vision 이중 추출 결과를 비교하고, 정규식 패턴으로 교차검증하고, 포장규격 기반 추론과 대조하고, mm 치수 같은 생성값은 제거합니다. <br>AI는 추출이고 최종 검증은 규칙이 담당합니다.</p></div>
 </div>
   </div>
 </section>
 
 <section class="sect paper" style="padding-top:0">
   <div class="wrap">
-    <div class="dhead"><span class="n"></span><h2 data-split>메일 특이사항 자동 분류 - 한 번 읽고 4곳에 분배</h2><p data-fade>메일 본문의 특이사항을 의미별로 나눠 생산의뢰서의 각 칸과 결재의견, ERP 비고까지 자동으로 채웁니다.</p></div>
+    <div class="dhead"><span class="n"></span><h2 data-split>메일 특이사항 자동 분류 - 한 번 읽고 4곳에 분배</h2><p class="nb" data-fade>메일 본문의 특이사항을 의미별로 나눠 생산의뢰서의 각 칸과 결재의견, ERP 비고까지 자동으로 채웁니다.</p></div>
     <div class="items two" data-cascade>
 <div class="item" data-fade><div class="k">01</div><h3>전체 특이사항</h3><p>생산·납품·포장·보관·품질 관련 모든 요청. 원료·자재 내용도 중복해 기재합니다.</p></div>
 <div class="item" data-fade><div class="k">02</div><h3>원료 특이사항</h3><p>성분·배합·함량·공급처, 사급과 자사구매 구분, 원료 소진만 분리합니다.</p></div>
@@ -294,7 +293,7 @@ a{color:inherit;text-decoration:none}
 
 <section class="sect paper" style="padding-top:0">
   <div class="wrap">
-    <div class="dhead"><span class="n"></span><h2 data-split>제형 추출·정규화 - 맥락으로 오추출을 막다</h2><p data-fade>제형은 거래처마다 표기가 다르고 자재 정보와 섞여 오추출되기 쉬워 전용 정규화·검증 로직을 두었습니다.</p></div>
+    <div class="dhead"><span class="n"></span><h2 data-split>제형 추출·정규화 - 맥락으로 오추출을 막다</h2><p class="nb" data-fade>제형은 거래처마다 표기가 다르고 자재 정보와 섞여 오추출되기 쉬워 전용 정규화·검증 로직을 두었습니다.</p></div>
     <div class="items" data-cascade>
       <div class="item" data-fade><div class="k">정규화 · 검증</div><h3>네 단계</h3>
         <ul><li>다중 시트 탐색 - 내부·외부·제출용 시트를 우선순위대로 수집</li><li>표기 정규화 - 800mg정제는 정제로, 연질은 통합, 코팅은 구분</li><li>치수 지어내기 차단 - mm 치수가 붙은 제형은 문서에 없던 생성값으로 보고 제거</li><li>포장규격 기반 교차검증 - PTP·50포에서 제형을 추론하고 모순되면 제거</li></ul></div>
@@ -351,7 +350,7 @@ a{color:inherit;text-decoration:none}
 
 <section class="sect paper" style="padding-top:0">
   <div class="wrap">
-    <div class="dhead"><span class="n"></span><h2 data-split>데이터 흐름 - 추출부터 매칭·산출까지</h2><p data-fade>발주서·견적서·메일에서 뽑은 제품명과 업체명을 네 개의 매칭 엔진이 사내 마스터와 대조해<br>코드·담당자로 확정하고, 한 결과를 Sheets·ERP·기안 세 곳에 재사용합니다.</p></div>
+    <div class="dhead"><span class="n"></span><h2 data-split>데이터 흐름 - 추출부터 매칭·산출까지</h2><p data-fade>발주서·견적서·메일에서 뽑은 제품명과 업체명을 네 개의 매칭 엔진이 사내 마스터와 대조해 <br>코드·담당자로 확정하고, 한 결과를 Sheets·ERP·기안 세 곳에 재사용합니다.</p></div>
     <div class="items" data-cascade>
       <div class="item" data-fade><div class="k">①</div><h3>추출</h3>
         <ul><li>발주서·견적서 - excel_parser / gemini_extractor + vision_parser</li><li>메일 - mail_scraper → mail_analyzer</li><li>cross_validator - 견적서 먼저 읽고 발주서와 교차검증한 뒤 메일로 확정</li></ul></div>
@@ -390,8 +389,8 @@ a{color:inherit;text-decoration:none}
     <div class="callgrid two" data-cascade>
 <div class="call" data-fade><div class="lab">챌린지</div><h4>ERP·그룹웨어 모두 API 없음</h4><p>공식 API도 DB 접근도 없는 두 시스템이었습니다. 그룹웨어는 브라우저(Playwright)로, ERP는 엑셀 같은 표 입력칸(fpSpread)을 복사·붙여넣기로 간접 제어했습니다. 드롭다운은 틀린 값도 조용히 무시돼서 넣은 뒤 다시 읽어 반영을 확인했습니다.</p></div>
 <div class="call" data-fade><div class="lab">챌린지</div><h4>상신 버튼이 클릭으로 안 눌림</h4><p>클릭 코드가 함수 안 숨은 변수(클로저)에 의존해 일반 클릭이 전부 실패했습니다. 버튼에 연결된 코드를 꺼내 분석하고 실제 함수를 브라우저 안에서 직접 실행했습니다.</p></div>
-<div class="call" data-fade><div class="lab">챌린지</div><h4>비정형 발주서·견적서 파싱</h4><p>거래처마다 양식이 다르고 PDF 텍스트가 깨졌습니다.<br>텍스트를 먼저 읽고 깨지면 이미지 인식으로 대신 처리하는 이중 전략을 쓰고<br>결과는 정규식으로 재검증했습니다.</p></div>
-<div class="call" data-fade><div class="lab">챌린지</div><h4>한 시트에 제형이 셋</h4><p>제품 제형과 부자재 치수가 같은 라벨로 섞여 있었습니다.<br>자재표 고유 컬럼으로 식별해 소스 단계에서 제외했습니다.</p></div>
+<div class="call" data-fade><div class="lab">챌린지</div><h4>비정형 발주서·견적서 파싱</h4><p>거래처마다 양식이 다르고 PDF 텍스트가 깨졌습니다. <br>텍스트를 먼저 읽고 깨지면 이미지 인식으로 대신 처리하는 이중 전략을 쓰고 <br>결과는 정규식으로 재검증했습니다.</p></div>
+<div class="call" data-fade><div class="lab">챌린지</div><h4>한 시트에 제형이 셋</h4><p>제품 제형과 부자재 치수가 같은 라벨로 섞여 있었습니다. <br>자재표 고유 컬럼으로 식별해 소스 단계에서 제외했습니다.</p></div>
 </div>
   </div>
 </section>
@@ -417,9 +416,9 @@ a{color:inherit;text-decoration:none}
     <div class="dhead"><span class="n">09</span><h2 data-split>성능·효율 최적화</h2><p data-fade>같은 자동화라도 더 빠르고 안정적으로 - 병렬화, 세션 재사용, 사전 동기화, 빠른 경로 우선.</p></div>
     <div class="items two" data-cascade>
 <div class="item" data-fade><div class="k">01</div><h3>병렬 큐 + 포커스 락</h3><p>그룹웨어(브라우저)와 ERP(데스크탑)를 독립 큐로 동시 처리하고 포커스 충돌만 락으로 제어했습니다. 순차 처리보다 처리량이 늘면서 입력 안정성은 유지됩니다.</p></div>
-<div class="item" data-fade><div class="k">02</div><h3>세션 재사용</h3><p>브라우저 로그인 상태를 저장·유지해 1회 로그인 후 계속 재사용합니다.<br>매 건 반복 로그인이 사라졌습니다.</p></div>
-<div class="item" data-fade><div class="k">03</div><h3>마스터 사전 동기화</h3><p>ERP 제품목록을 매일 08:25에 미리 내보내 캐시합니다.<br>매 건 ERP를 조회하지 않고 즉시 품목을 매칭합니다.</p></div>
-<div class="item" data-fade><div class="k">04</div><h3>빠른 경로 우선 + 즉시 retry</h3><p>텍스트 읽기를 먼저 하고 깨질 때만 이미지 인식으로 전환합니다.<br>실패한 작업의 재시도는 대기열 최우선으로 즉시 실행합니다.</p></div>
+<div class="item" data-fade><div class="k">02</div><h3>세션 재사용</h3><p>브라우저 로그인 상태를 저장·유지해 1회 로그인 후 계속 재사용합니다. <br>매 건 반복 로그인이 사라졌습니다.</p></div>
+<div class="item" data-fade><div class="k">03</div><h3>마스터 사전 동기화</h3><p>ERP 제품목록을 매일 08:25에 미리 내보내 캐시합니다. <br>매 건 ERP를 조회하지 않고 즉시 품목을 매칭합니다.</p></div>
+<div class="item" data-fade><div class="k">04</div><h3>빠른 경로 우선 + 즉시 retry</h3><p>텍스트 읽기를 먼저 하고 깨질 때만 이미지 인식으로 전환합니다. <br>실패한 작업의 재시도는 대기열 최우선으로 즉시 실행합니다.</p></div>
 </div>
   </div>
 </section>
@@ -545,7 +544,7 @@ a{color:inherit;text-decoration:none}
       document.querySelectorAll('[data-cascade]').forEach(function(c){io.observe(c);});
       document.querySelectorAll(SEL).forEach(function(el){ if(!el.closest('[data-cascade]')) io.observe(el); });
 
-      if (window.innerWidth > 760) {
+      {   /* 내비: PC·모바일 모두 스크롤 따라 숨김/표시 */
         var nav=document.querySelector('.nav'),last=0;
         addEventListener('scroll',function(){
           var y=scrollY;

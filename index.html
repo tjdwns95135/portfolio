@@ -7,6 +7,11 @@
 /* 첫 페인트부터 숨김 상태로 시작한다. 제목이 떴다가 사라지고 다시 올라오는 걸 없앤다.
    3.5초 안에 단어 분해가 안 되면(스크립트 오류 등) 제목을 그냥 보여준다. */
 document.documentElement.classList.add('anim-ready');
+/* 새로고침·새 진입은 맨 위에서 시작한다. 뒤로/앞으로 가기만 원래 보던 위치를 복원한다 */
+if ('scrollRestoration' in history){
+  var __nav = performance.getEntriesByType('navigation')[0];
+  history.scrollRestoration = (__nav && __nav.type === 'back_forward') ? 'auto' : 'manual';
+}
 setTimeout(function(){
   document.querySelectorAll('[data-split]:not([data-wm])').forEach(function(el){ el.dataset.wm = '1'; });
 }, 3500);
@@ -62,7 +67,7 @@ body{
   word-break:keep-all;overflow-wrap:break-word;
   -webkit-font-smoothing:antialiased;
 }
-img,video{display:block;max-width:100%;}
+img,video{display:block;max-width:100%;height:auto;}
 a{color:inherit;text-decoration:none;}
 :focus-visible{outline:2px solid currentColor;outline-offset:4px;border-radius:2px;}
 
@@ -285,7 +290,6 @@ a{color:inherit;text-decoration:none;}
 .curtain{position:fixed;inset:0;z-index:90;background:var(--ink);transform:scaleY(0);transform-origin:bottom;pointer-events:none;}
 
 @media (max-width:760px){
-  .nav{transform:none!important;opacity:1!important}
   .ln,.l{display:inline}
   br{display:none}
 }
@@ -615,8 +619,8 @@ a{color:inherit;text-decoration:none;}
         if (!el.closest('[data-cascade]')) io.observe(el);
       });
 
-      /* 내비: PC에서만 스크롤 따라 숨김/표시 */
-      if (window.innerWidth > 760) {
+      /* 내비: PC·모바일 모두 스크롤 따라 숨김/표시 */
+      {
         var nav = document.querySelector('.nav'), lastY = 0;
         addEventListener('scroll', function(){
           var y = scrollY;
@@ -640,6 +644,9 @@ a{color:inherit;text-decoration:none;}
           setTimeout(function(){
             if (window.__lenis) window.__lenis.scrollTo(target, { immediate: true });
             else target.scrollIntoView();
+            /* 주소에서 해시를 지운다. 프로젝트에서 돌아올 때만 이동하고,
+               그 뒤 새로고침하면 맨 위로 가게 한다 */
+            history.replaceState(null, '', location.pathname + location.search);
           }, 80);
         }
       }
