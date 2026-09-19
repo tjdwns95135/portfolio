@@ -350,7 +350,7 @@ a{color:inherit;text-decoration:none;}
 
       <a class="work" href="projects/production-order.html" data-trans>
         <div class="shot" data-img data-clip>
-          <img class="img-in" src="assets/kv/production.png" alt="생산의뢰 자동화 관제 화면" loading="lazy">
+          <img class="img-in" src="assets/kv/production.png" alt="생산의뢰 자동화 관제 화면" loading="lazy" width="1600" height="1200">
         </div>
         <div class="meta" data-fade>
           <div class="kind">수주 처리 자동화</div>
@@ -363,7 +363,7 @@ a{color:inherit;text-decoration:none;}
 
       <a class="work" href="projects/sales-meeting.html" data-trans>
         <div class="shot" data-img data-clip>
-          <img class="img-in" src="assets/kv/sales.png" alt="영업 미팅 현황 관리 통계 화면" loading="lazy">
+          <img class="img-in" src="assets/kv/sales.png" alt="영업 미팅 현황 관리 통계 화면" loading="lazy" width="1600" height="1200">
         </div>
         <div class="meta" data-fade>
           <div class="kind">영업 미팅 · 출장 관리</div>
@@ -376,7 +376,7 @@ a{color:inherit;text-decoration:none;}
 
       <a class="work" href="projects/purchase.html" data-trans>
         <div class="shot" data-img data-clip>
-          <img class="img-in" src="assets/kv/purchase.png" alt="원료 구매·발주 운영 대시보드" loading="lazy">
+          <img class="img-in" src="assets/kv/purchase.png" alt="원료 구매·발주 운영 대시보드" loading="lazy" width="1600" height="1200">
         </div>
         <div class="meta" data-fade>
           <div class="kind">원료 구매 · 발주</div>
@@ -653,6 +653,8 @@ a{color:inherit;text-decoration:none;}
         return;
       }
       gsap.registerPlugin(ScrollTrigger);
+      /* 모바일 주소창이 접혔다 펴질 때마다 refresh 하면 스크롤이 튄다 */
+      ScrollTrigger.config({ ignoreMobileResize:true });
 
       var lenis = null;
       if (window.Lenis && window.innerWidth > 760){
