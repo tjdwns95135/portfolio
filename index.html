@@ -696,9 +696,7 @@ a{color:inherit;text-decoration:none;}
       gsap.utils.toArray('[data-img]').forEach(function(box){
         var im = box.querySelector('.img-in');
         if (!im) return;
-        /* 카드 이미지는 도식이라 잘리면 안 된다.
-           scale 로 확보한 여유(2.5%) 안에서만 ±2% 움직여 빈틈도 잘림도 없게 한다. */
-        gsap.fromTo(im, { yPercent:-2, scale:1.05 }, { yPercent:2, scale:1.05, ease:'none',
+        gsap.fromTo(im, { yPercent:-4 }, { yPercent:4, ease:'none',
           scrollTrigger:{ trigger:box, start:'top bottom', end:'bottom top', scrub:true } });
       });
 
