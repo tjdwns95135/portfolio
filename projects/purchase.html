@@ -67,6 +67,8 @@ a{color:inherit;text-decoration:none}
 
 /* hero */
 .hero{background:var(--ink);color:var(--on-dark);padding-block:clamp(120px,20vh,210px) clamp(60px,9vh,100px);text-align:center}
+.kv{background:var(--ink);padding-bottom:clamp(60px,10vh,120px)}
+.kv img{width:100%;max-width:960px;margin:0 auto;border-radius:12px}
 .tagrow{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:clamp(22px,4vh,36px)}
 .tag{font-size:12.5px;letter-spacing:.06em;color:var(--on-dark-mute);
   border:1px solid var(--line-dark);border-radius:4px;padding:7px 15px}
@@ -139,11 +141,13 @@ video{width:100%;border-radius:8px;background:#000;display:block;border:1px soli
     <p class="lede" data-split>배합비와 재고를 손으로 옮겨 계산하던 과정을 한 화면에서 소요량·부족분·단가로 확인합니다.</p>
     <div class="meta">
       <span>역할 <b>설계 · 개발</b></span>
-      <span>구매팀 <b>요구사항 · 검증</b></span>
       <span>기간 <b>2026.06 - 2026.08</b></span>
+      <span>구매팀 <b>요구사항 · 검증</b></span>
     </div>
   </div>
 </header>
+
+<div class="kv"><div class="wrap"><img src="../assets/kv/purchase.png" alt="배합비·소요량·재고·단가를 통합 DB로 모아 부족분·소비기한·원료 특이사항·이관 결재 상신으로 내보내는 구조도" data-fade width="1600" height="1200"></div></div>
 
 <div class="seam" aria-hidden="true"></div>
 
